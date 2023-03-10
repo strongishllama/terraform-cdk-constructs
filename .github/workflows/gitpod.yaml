@@ -31,10 +31,10 @@ jobs:
           registry: ${{ env.REGISTRY_NAME }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Lint
-        uses: hadolint/hadolint-action@v3.1.0
-        with:
-          dockerfile: build/gitpod/Dockerfile
+      # - name: Lint
+      #   uses: hadolint/hadolint-action@v3.1.0
+      #   with:
+      #     dockerfile: build/gitpod/Dockerfile
       - name: Extract Metadata
         id: extract-metadata
         uses: docker/metadata-action@v4

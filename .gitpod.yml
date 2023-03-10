@@ -1,0 +1,14 @@
+image: ghcr.io/strongishllama/mesbg-list-builder-gitpod:main
+
+vscode:
+  extensions:
+    - esbenp.prettier-vscode
+    - exiasr.hadolint
+    - golang.go
+    - hashicorp.hcl
+    - hashicorp.terraform
+    - ms-azuretools.vscode-docker
+    - redhat.vscode-yaml
+    - streetsidesoftware.code-spell-checker
+    - timonwong.shellcheck
+    - waderyan.gitblame

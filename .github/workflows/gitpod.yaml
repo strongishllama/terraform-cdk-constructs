@@ -1,0 +1,49 @@
+name: GitPod
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - build/gitpod/Dockerfile
+      - .github/workflows/gitpod.yaml
+  push:
+    branches:
+      - main
+    paths:
+      - build/gitpod/Dockerfile
+      - .github/workflows/gitpod.yaml
+env:
+  REGISTRY_NAME: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}-gitpod
+jobs:
+  update-image:
+    name: Update Image
+    permissions:
+      contents: read
+      packages: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Login To Github Docker Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY_NAME }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Lint
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: build/gitpod/Dockerfile
+      - name: Extract Metadata
+        id: extract-metadata
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}
+      - name: Build And Push Docker Image
+        uses: docker/build-push-action@v3
+        with:
+          context: build/gitpod/
+          push: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+          tags: ${{ steps.extract-metadata.outputs.tags }}
+          labels: ${{ steps.extract-metadata.outputs.labels }}

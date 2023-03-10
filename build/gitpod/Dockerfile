@@ -3,15 +3,16 @@ FROM gitpod/workspace-go:2023-03-06-18-43-51
 USER root
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends gnupg software-properties-common && \
-    wget --progress=dot:giga -O- https://apt.releases.hashicorp.com/gpg | \
-    gpg --dearmor | tee /usr/share/keyrings/hashicorp-archive-keyring.gpg && \
-    gpg --no-default-keyring -keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint && \
-    echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/hashicorp.list && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends terraform && \
-    rm -rf /var/lib/apt/lists/*
+# hadolint ignore=DL3008
+# RUN apt-get update && \
+#     apt-get install -y --no-install-recommends gnupg software-properties-common && \
+#     wget --progress=dot:giga -O- https://apt.releases.hashicorp.com/gpg | \
+#     gpg --dearmor | tee /usr/share/keyrings/hashicorp-archive-keyring.gpg && \
+#     gpg --no-default-keyring -keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint && \
+#     echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/hashicorp.list && \
+#     apt-get update && \
+#     apt-get install -y --no-install-recommends terraform && \
+#     rm -rf /var/lib/apt/lists/*
 
 
 USER gitpod

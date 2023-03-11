@@ -1,4 +1,4 @@
-image: ghcr.io/strongishllama/mesbg-list-builder-gitpod:main
+image: ghcr.io/strongishllama/terraform-cdk-constructs-gitpod:main
 
 vscode:
   extensions:

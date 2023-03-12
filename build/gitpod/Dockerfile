@@ -16,6 +16,8 @@ RUN apt-get update && \
 
 USER gitpod
 
+ENV NODE_VERSION v18
+
 RUN wget --progress=dot:giga https://go.dev/dl/go1.20.2.linux-amd64.tar.gz && \
     rm -rf /home/gitpod/go && \
     tar -C /home/gitpod -xzf go1.20.2.linux-amd64.tar.gz && \
@@ -25,6 +27,9 @@ RUN wget --progress=dot:giga https://go.dev/dl/go1.20.2.linux-amd64.tar.gz && \
     wget --progress=dot:giga --output-document /home/gitpod/.local/bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64 && \
     chmod +x /home/gitpod/.local/bin/hadolint && \
     wget --progress=dot:giga -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash && \
-    nvm install v18 && \
-    nvm use v18 && \
+    export NVM_DIR="${HOME}/.nvm" && \
+    [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh" && \
+    [ -s "${NVM_DIR}/bash_completion" ] && \. "${NVM_DIR}/bash_completion" && \
+    nvm install ${NODE_VERSION} && \
+    nvm use ${NODE_VERSION} && \
     npm install --global cdktf-cli@latest

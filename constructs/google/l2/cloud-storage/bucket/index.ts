@@ -4,28 +4,33 @@ import { Region } from "../../../core/region";
 import { GrantConfig, IGrantable } from "../../iam/grantable";
 import { StorageRoles } from "../../iam";
 import { CryptoKey } from "../../cloud-kms";
+import { StorageBucketEncryption } from "@cdktf/provider-google/lib/storage-bucket";
 
 export interface BucketConfig {
+  readonly cryptoKey?: CryptoKey;
   readonly location: Region;
   readonly name: string;
-  readonly cryptoKey?: CryptoKey;
 }
 
 export class Bucket extends Construct {
+  private readonly cryptoKey?: CryptoKey;
   private readonly resource: storageBucket.StorageBucket;
 
   constructor(scope: Construct, name: string, config: BucketConfig) {
     super(scope, name);
 
+    let encryption: StorageBucketEncryption | undefined = undefined;
+    if (config.cryptoKey !== undefined) {
+      this.cryptoKey = this.cryptoKey;
+      encryption = {
+        defaultKmsKeyName: config.cryptoKey.name,
+      };
+    }
+
     this.resource = new storageBucket.StorageBucket(this, "Resource", {
       location: config.location,
       name: config.name,
-      encryption:
-        config.cryptoKey === undefined
-          ? undefined
-          : {
-              defaultKmsKeyName: config.cryptoKey.name,
-            },
+      encryption: encryption,
     });
   }
 
@@ -48,8 +53,6 @@ export class Bucket extends Construct {
       id: this.resource.name,
       role: StorageRoles.OBJECT_VIEWER,
     });
-
-    // TODO: Add encryption grant if defined.
   }
 
   private grant(grantee: IGrantable, config: GrantConfig): void {
@@ -58,5 +61,9 @@ export class Bucket extends Construct {
       member: grantee.grantMember,
       role: config.role,
     });
+
+    if (this.cryptoKey !== undefined) {
+      this.cryptoKey.grantEncrypterDecrypter(grantee);
+    }
   }
 }

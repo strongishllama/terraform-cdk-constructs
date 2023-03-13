@@ -1,11 +1,10 @@
 import { Construct } from "constructs";
 import { kmsCryptoKey, kmsCryptoKeyIamMember } from "@cdktf/provider-google";
-import { KeyRing } from "../key-ring";
+import { IKeyRing } from "../key-ring";
 import { CloudKMSRoles, GrantConfig, IGrantable } from "../../iam";
 
 export interface CryptoKeyConfig {
-  // TODO: Change to IKeyRing interface so existing key rings can be pulled down using data blocks.
-  readonly keyRing: KeyRing;
+  readonly keyRing: IKeyRing;
   readonly name: string;
 }
 

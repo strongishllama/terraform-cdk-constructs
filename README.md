@@ -1,2 +1,3 @@
-# terraform-cdk-constructs
-A library for L2 CDKTF constructs.
+# Terraform CDK Constructs
+
+A library for CDKTF constructs.

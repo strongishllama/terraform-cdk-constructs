@@ -3,6 +3,6 @@ export interface IGrantable {
 }
 
 export interface GrantConfig {
-  readonly name: string;
+  readonly id: string;
   readonly role: string;
 }

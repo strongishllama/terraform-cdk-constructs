@@ -22,8 +22,8 @@ class MyStack extends TerraformStack {
       location: "australia-southeast1",
       name: "example-bucket",
       encryption: {
-        defaultKmsKeyName: l1CryptoKey.name
-      }
+        defaultKmsKeyName: l1CryptoKey.name,
+      },
     });
     const l1ServiceAccount = new serviceAccount.ServiceAccount(this, "service-account", {
       accountId: "john@example.com",
@@ -35,15 +35,15 @@ class MyStack extends TerraformStack {
     });
 
     // L2 example.
-    const l2Bucket = new Bucket(this, "bucket", {
-      location: Region.AUSTRALIA_SOUTHEAST1,
-      name: "example-bucket",
-      
-    });
-    const l2ServiceAccount = new ServiceAccount(this, "service-account", {
-      accountId: "john@example.com",
-    });
-    l2Bucket.grantView(l2ServiceAccount);
+    // const l2Bucket = new Bucket(this, "bucket", {
+    //   location: Region.AUSTRALIA_SOUTHEAST1,
+    //   name: "example-bucket",
+
+    // });
+    // const l2ServiceAccount = new ServiceAccount(this, "service-account", {
+    //   accountId: "john@example.com",
+    // });
+    // l2Bucket.grantView(l2ServiceAccount);
   }
 }
 

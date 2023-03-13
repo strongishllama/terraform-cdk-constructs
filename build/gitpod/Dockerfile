@@ -4,20 +4,24 @@ USER root
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# hadolint ignore=DL3008
+# hadolint ignore=DL3008,DL4001
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends gnupg software-properties-common && \
+    apt-get install -y --no-install-recommends apt-transport-https ca-certificates gnupg software-properties-common && \
     wget --progress=dot:giga -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | tee /usr/share/keyrings/hashicorp-archive-keyring.gpg && \
     gpg --no-default-keyring --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint && \
     echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/hashicorp.list && \
     apt-get update && \
     apt-get install -y --no-install-recommends terraform && \
+    echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - && \
+    apt-get update && apt-get install -y --no-install-recommends google-cloud-cli && \
     rm -rf /var/lib/apt/lists/*
 
 USER gitpod
 
 ENV NODE_VERSION v18
 
+# hadolint ignore=DL4001,SC1091
 RUN wget --progress=dot:giga https://go.dev/dl/go1.20.2.linux-amd64.tar.gz && \
     rm -rf /home/gitpod/go && \
     tar -C /home/gitpod -xzf go1.20.2.linux-amd64.tar.gz && \

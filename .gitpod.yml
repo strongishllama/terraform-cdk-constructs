@@ -1,5 +1,9 @@
 image: ghcr.io/strongishllama/terraform-cdk-constructs-gitpod:main
 
+tasks:
+  - name: Install dependencies
+    init: cd constructs && npm install
+
 vscode:
   extensions:
     - esbenp.prettier-vscode

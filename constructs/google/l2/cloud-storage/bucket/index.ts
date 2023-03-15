@@ -5,11 +5,13 @@ import { GrantConfig, IGrantable } from "../../iam/grantable";
 import { StorageRoles } from "../../iam";
 import { CryptoKey } from "../../cloud-kms";
 import { StorageBucketEncryption } from "@cdktf/provider-google/lib/storage-bucket";
+import { ITerraformDependable } from "cdktf/lib/terraform-dependable";
 
 export interface BucketConfig {
-  readonly cryptoKey?: CryptoKey;
-  readonly location: Region;
   readonly name: string;
+  readonly location: Region;
+  readonly cryptoKey?: CryptoKey;
+  readonly dependsOn?: ITerraformDependable[];
 }
 
 export class Bucket extends Construct {
@@ -23,7 +25,7 @@ export class Bucket extends Construct {
     if (config.cryptoKey !== undefined) {
       this.cryptoKey = this.cryptoKey;
       encryption = {
-        defaultKmsKeyName: config.cryptoKey.name,
+        defaultKmsKeyName: config.cryptoKey.id,
       };
     }
 
@@ -31,6 +33,7 @@ export class Bucket extends Construct {
       location: config.location,
       name: config.name,
       encryption: encryption,
+      dependsOn: config.dependsOn,
     });
   }
 

@@ -2,7 +2,7 @@ image: ghcr.io/strongishllama/terraform-cdk-constructs-gitpod:main
 
 tasks:
   - name: Install dependencies
-    init: cd constructs && npm install
+    init: go mod tidy && cd constructs && npm install
 
 vscode:
   extensions:

@@ -2,11 +2,12 @@ import { env } from "process";
 import { Construct } from "constructs";
 import { TerraformStack } from "cdktf";
 import { GoogleProvider } from "@cdktf/provider-google/lib/provider";
-import { Region } from "../../google/core/region";
+import { Region } from "../../google/core/compute/region";
 import { CryptoKey, KeyRing } from "../../google/l2/cloud-kms";
 import { Bucket } from "../../google/l2/cloud-storage";
 import { ServiceAccount } from "../../google/l2/iam";
 import { DataGoogleProject } from "@cdktf/provider-google/lib/data-google-project";
+import { Location } from "../../google/core/cloud-kms";
 
 export class L2Stack extends TerraformStack {
   constructor(scope: Construct, id: string) {
@@ -19,7 +20,7 @@ export class L2Stack extends TerraformStack {
     const project = new DataGoogleProject(this, "project", {});
 
     const l2KeyRing = KeyRing.fromKeyRingAttributes(this, "key-ring-l2", {
-      location: Region.AUSTRALIA_SOUTHEAST1,
+      location: Location.AUSTRALIA_SOUTHEAST1,
       name: "default",
     });
     const l2CryptoKey = new CryptoKey(this, "crypto-key-l2", {

@@ -1,3 +1,5 @@
+// THIS FILE IS GENERATED VIA MAGE. DO NOT EDIT MANUALLY!
+
 export enum Region {
   ASIA_EAST1 = "asia-east1",
   ASIA_EAST2 = "asia-east2",

@@ -1,10 +1,10 @@
 import { Construct } from "constructs";
 import { kmsKeyRing } from "@cdktf/provider-google";
 import { DataGoogleKmsKeyRing } from "@cdktf/provider-google/lib/data-google-kms-key-ring";
+import { Location } from "../../../core/cloud-kms";
 
 export interface KeyRingConfig {
-  // TODO: Change to enum, see gcloud kms locations list
-  readonly location: string;
+  readonly location: Location;
   readonly name: string;
 }
 

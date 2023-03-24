@@ -11,8 +11,8 @@ export interface CryptoKeyConfig {
 export class CryptoKey extends Construct {
   private readonly resource: kmsCryptoKey.KmsCryptoKey;
 
-  constructor(scope: Construct, name: string, config: CryptoKeyConfig) {
-    super(scope, name);
+  constructor(scope: Construct, id: string, config: CryptoKeyConfig) {
+    super(scope, id);
 
     this.resource = new kmsCryptoKey.KmsCryptoKey(this, "crypto-key", {
       keyRing: config.keyRing.id,

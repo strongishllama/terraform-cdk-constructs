@@ -18,8 +18,8 @@ export class Bucket extends Construct {
   private readonly cryptoKey?: CryptoKey;
   private readonly resource: storageBucket.StorageBucket;
 
-  constructor(scope: Construct, name: string, config: BucketConfig) {
-    super(scope, name);
+  constructor(scope: Construct, id: string, config: BucketConfig) {
+    super(scope, id);
 
     let encryption: StorageBucketEncryption | undefined = undefined;
     if (config.cryptoKey !== undefined) {

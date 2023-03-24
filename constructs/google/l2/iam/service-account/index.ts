@@ -9,8 +9,8 @@ export class ServiceAccount extends Construct {
   public readonly grantMember: string;
   private readonly resource: serviceAccount.ServiceAccount;
 
-  constructor(scope: Construct, name: string, config: ServiceAccountConfig) {
-    super(scope, name);
+  constructor(scope: Construct, id: string, config: ServiceAccountConfig) {
+    super(scope, id);
 
     this.resource = new serviceAccount.ServiceAccount(this, "Resource", {
       accountId: config.accountId,

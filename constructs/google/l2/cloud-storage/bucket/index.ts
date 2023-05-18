@@ -29,7 +29,7 @@ export class Bucket extends Construct {
       };
     }
 
-    this.resource = new storageBucket.StorageBucket(this, "Resource", {
+    this.resource = new storageBucket.StorageBucket(this, "resource", {
       location: config.location,
       name: config.name,
       encryption: encryption,

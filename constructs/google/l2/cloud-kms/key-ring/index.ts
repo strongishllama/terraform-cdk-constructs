@@ -38,7 +38,7 @@ export class KeyRing extends Construct implements IKeyRing {
   constructor(scope: Construct, id: string, config: KeyRingConfig) {
     super(scope, id);
 
-    this.resource = new kmsKeyRing.KmsKeyRing(this, "key-ring", {
+    this.resource = new kmsKeyRing.KmsKeyRing(this, "resource", {
       location: config.location,
       name: config.name,
     });

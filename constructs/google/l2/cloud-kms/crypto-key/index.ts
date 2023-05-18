@@ -14,7 +14,7 @@ export class CryptoKey extends Construct {
   constructor(scope: Construct, id: string, config: CryptoKeyConfig) {
     super(scope, id);
 
-    this.resource = new kmsCryptoKey.KmsCryptoKey(this, "crypto-key", {
+    this.resource = new kmsCryptoKey.KmsCryptoKey(this, "resource", {
       keyRing: config.keyRing.id,
       name: config.name,
     });

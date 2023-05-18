@@ -12,7 +12,7 @@ export class ServiceAccount extends Construct {
   constructor(scope: Construct, id: string, config: ServiceAccountConfig) {
     super(scope, id);
 
-    this.resource = new serviceAccount.ServiceAccount(this, "Resource", {
+    this.resource = new serviceAccount.ServiceAccount(this, "resource", {
       accountId: config.accountId,
     });
 

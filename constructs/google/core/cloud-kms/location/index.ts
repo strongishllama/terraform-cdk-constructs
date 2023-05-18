@@ -41,6 +41,9 @@ export enum Location {
   // HSM Available: true
   AUSTRALIA_SOUTHEAST2 = "australia-southeast2",
   // EKM Available: true
+  // HSM Available: false
+  CA = "ca",
+  // EKM Available: true
   // HSM Available: true
   EUR3 = "eur3",
   // EKM Available: true
@@ -69,6 +72,9 @@ export enum Location {
   EUROPE_WEST1 = "europe-west1",
   // EKM Available: true
   // HSM Available: true
+  EUROPE_WEST12 = "europe-west12",
+  // EKM Available: true
+  // HSM Available: true
   EUROPE_WEST2 = "europe-west2",
   // EKM Available: true
   // HSM Available: true
@@ -91,6 +97,9 @@ export enum Location {
   // EKM Available: true
   // HSM Available: false
   IN = "in",
+  // EKM Available: true
+  // HSM Available: true
+  ME_CENTRAL1 = "me-central1",
   // EKM Available: true
   // HSM Available: true
   ME_WEST1 = "me-west1",

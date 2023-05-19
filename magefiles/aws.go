@@ -1,5 +1,3 @@
-//go:build mage
-
 package main
 
 import (
@@ -21,6 +19,8 @@ func AWSGenerate(ctx context.Context) error {
 	if err := awsGenerateIAM(ctx); err != nil {
 		return err
 	}
+
+	fmt.Println("aws generation completed...")
 	return nil
 }
 
@@ -62,10 +62,10 @@ func awsGenerateIAM(ctx context.Context) error {
 	counter := len(policies.ServiceMap)
 
 	keys := []string{}
-	for k, _ := range policies.ServiceMap {
+	for k := range policies.ServiceMap {
 		keys = append(keys, k)
 	}
-	sort.Slice(keys, func (i, j int) bool {
+	sort.Slice(keys, func(i, j int) bool {
 		return keys[i] < keys[j]
 	})
 

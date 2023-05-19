@@ -1,0 +1,32 @@
+name: Generate
+on:
+  schedule:
+    - cron: "0 18 * * 5"
+  workflow_dispatch:
+jobs:
+  run-generation:
+    name: Run Generation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: ^1.20
+      - name: Run Mage
+        uses: magefile/mage-action@v2
+        with:
+          args: generate
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          add-paths: |
+            *
+          assignees: ${{ github.actor }}
+          branch: auto-generate-actions-from-workflow
+          commit-message: "fix: auto-updated actions list"
+          committer: strongishllama <taliesin@millhouse.dev>
+          delete-branch: true
+          title: "fix: auto-updated actions list"
+          token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,5 +1,3 @@
-//go:build mage
-
 package main
 
 import (
@@ -17,5 +15,7 @@ func DockerBuild(ctx context.Context) error {
 	if err != nil {
 		return err
 	}
+
+	fmt.Println("docker images built...")
 	return nil
 }

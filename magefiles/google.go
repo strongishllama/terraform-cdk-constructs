@@ -1,5 +1,3 @@
-//go:build mage
-
 package main
 
 import (
@@ -23,10 +21,15 @@ func GoogleBootstrapBackend(ctx context.Context, projectID string, location stri
 	}
 	defer client.Close()
 
-	return client.Bucket(bucketName).Create(ctx, projectID, &storage.BucketAttrs{
+	if err := client.Bucket(bucketName).Create(ctx, projectID, &storage.BucketAttrs{
 		Location:          location,
 		VersioningEnabled: true,
-	})
+	}); err != nil {
+		return err
+	}
+
+	fmt.Println("google backend bootstrapped...")
+	return nil
 }
 
 func GoogleGenerate(ctx context.Context) error {
@@ -38,6 +41,8 @@ func GoogleGenerate(ctx context.Context) error {
 	if err := googleGenerateCloudKMS(ctx); err != nil {
 		return err
 	}
+
+	fmt.Println("google generation completed...")
 	return nil
 }
 

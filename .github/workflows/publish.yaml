@@ -5,13 +5,18 @@ on:
       - main
     paths:
       - constructs/**
-      - "!.prettierrc"
+      - "!constructs/.prettierrc"
+      - .github/workflows/publish.yaml
   pull_request:
     branches:
       - main
     paths:
       - constructs/**
       - "!.prettierrc"
+      - "!constructs/.prettierrc"
+      - .github/workflows/publish.yaml
+permissions:
+  contents: write
 jobs:
   lint:
     name: Lint

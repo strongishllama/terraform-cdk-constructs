@@ -15,7 +15,7 @@ export class RecordSet extends Construct {
   constructor(scope: Construct, id: string, config: RecordSetConfig) {
     super(scope, id);
 
-    /*this.resource = */new dnsRecordSet.DnsRecordSet(this, "resource", {
+    /*this.resource = */ new dnsRecordSet.DnsRecordSet(this, "resource", {
       managedZone: config.managedZone.id,
       name: config.name,
       type: config.type,

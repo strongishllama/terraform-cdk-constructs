@@ -5,6 +5,7 @@ go 1.19
 require (
 	cloud.google.com/go/storage v1.30.1
 	github.com/magefile/mage v1.15.0
+	golang.org/x/sync v0.2.0
 )
 
 require (

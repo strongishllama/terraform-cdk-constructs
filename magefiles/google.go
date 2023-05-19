@@ -15,6 +15,8 @@ import (
 )
 
 func GoogleBootstrapBackend(ctx context.Context, projectID string, location string, bucketName string) error {
+	fmt.Println("bootstrapping google backend...")
+
 	client, err := storage.NewClient(ctx)
 	if err != nil {
 		return err
@@ -28,16 +30,18 @@ func GoogleBootstrapBackend(ctx context.Context, projectID string, location stri
 }
 
 func GoogleGenerate(ctx context.Context) error {
-	if err := generateGoogleRegionsAndZones(ctx); err != nil {
+	fmt.Println("running google generation...")
+
+	if err := googleGenerateCompute(ctx); err != nil {
 		return err
 	}
-	if err := generateGoogleKMSLocations(ctx); err != nil {
+	if err := googleGenerateCloudKMS(ctx); err != nil {
 		return err
 	}
 	return nil
 }
 
-func generateGoogleKMSLocations(ctx context.Context) error {
+func googleGenerateCloudKMS(ctx context.Context) error {
 	stdout := &bytes.Buffer{}
 	_, err := sh.Exec(nil, stdout, os.Stderr, "gcloud", "kms", "locations", "list", "--format=json")
 	if err != nil {
@@ -74,7 +78,7 @@ func generateGoogleKMSLocations(ctx context.Context) error {
 	return nil
 }
 
-func generateGoogleRegionsAndZones(ctx context.Context) error {
+func googleGenerateCompute(ctx context.Context) error {
 	stdout := &bytes.Buffer{}
 	_, err := sh.Exec(nil, stdout, os.Stderr, "gcloud", "compute", "regions", "list", "--format=json")
 	if err != nil {

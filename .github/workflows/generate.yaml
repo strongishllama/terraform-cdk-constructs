@@ -14,6 +14,11 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: ^1.20
+      - name: Authenticate with Google
+        uses: google-github-actions/auth@v1
+        with:
+          workload_identity_provider: projects/318971306007/locations/global/workloadIdentityPools/terraform-cdk-constructs/providers/terraform-cdk-constructs
+          service_account: github-actions@cc-terraform-cdk-construct-ops.iam.gserviceaccount.com
       - name: Run Mage
         uses: magefile/mage-action@v2
         with:

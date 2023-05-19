@@ -1,2 +1,15 @@
-# Ignore generated credentials from google-github-actions/auth.
-gha-creds-*.json
+# CDKTF files and directories.
+**/*.d.ts
+**/*.js
+**/node_modules
+**/cdktf.out
+**/cdktf.log
+**/*terraform.*.tfstate*
+**/.gen
+**/.terraform
+**/tsconfig.tsbuildinfo
+**/!jest.config.js
+**/!setup.js
+
+# Generated credentials from google-github-actions/auth.
+**/gha-creds-*.json

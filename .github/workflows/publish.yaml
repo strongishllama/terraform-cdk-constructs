@@ -16,9 +16,13 @@ jobs:
   lint:
     name: Lint
     uses: strongishllama/github-actions/.github/workflows/npm-lint.yaml@main
+    with:
+      path: constructs/
   test:
     name: Test
     uses: strongishllama/github-actions/.github/workflows/npm-build.yaml@main
+    with:
+      path: constructs/
   bump-tag:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs:
@@ -46,5 +50,6 @@ jobs:
     with:
       scope: "@strongishllama"
       package-version: ${{ needs.bump-tag.outputs.bumped-tag }}
+      path: constructs/
     secrets:
       npm-token: ${{ secrets.NPM_TOKEN }}

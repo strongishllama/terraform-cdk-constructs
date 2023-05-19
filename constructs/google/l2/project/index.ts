@@ -4,7 +4,7 @@ import { DataGoogleProject } from "@cdktf/provider-google/lib/data-google-projec
 export interface ProjectConfig {}
 
 export class Project extends Construct implements IProject {
-  public static fromProjectAttributes(scope: Construct, id: string, attributes?: ProjectAttributes): IProject {
+  public static fromProjectAttributes(scope: Construct, id: string, _attributes?: ProjectAttributes): IProject {
     class Import implements IProject {
       private readonly data: DataGoogleProject;
 
@@ -25,7 +25,7 @@ export class Project extends Construct implements IProject {
   }
 
   // TODO: Implement
-  private constructor(scope: Construct, id: string, config: ProjectConfig) {
+  private constructor(scope: Construct, id: string, _config: ProjectConfig) {
     super(scope, id);
   }
 

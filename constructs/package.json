@@ -4,7 +4,6 @@
   "main": "main.js",
   "types": "main.ts",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "build": "tsc",
     "compile": "tsc --pretty",

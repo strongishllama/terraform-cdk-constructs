@@ -16,7 +16,7 @@ func backendGCSCreateCommand() *cobra.Command {
 			location := cmd.Flag("location").Value.String()
 			bucketName := cmd.Flag("bucket-name").Value.String()
 
-			client, err := backend.NewClient(backend.WithAWSAuthentication(cmd.Context()))
+			client, err := backend.NewClient(backend.WithGoogleAuthentication(cmd.Context()))
 			if err != nil {
 				exit(err)
 			}

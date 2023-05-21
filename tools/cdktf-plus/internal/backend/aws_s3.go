@@ -2,6 +2,7 @@ package backend
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
@@ -11,6 +12,10 @@ import (
 )
 
 func (c client) NewAWSS3Backend(ctx context.Context, bucketName, tableName string) error {
+	if c.dynamoDBClient == nil || c.s3Client == nil {
+		return fmt.Errorf("no aws authentication provided, authentication can be set via the aws cli environment variables")
+	}
+
 	if err := c.newS3Bucket(ctx, bucketName); err != nil {
 		return err
 	}

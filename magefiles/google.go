@@ -8,29 +8,8 @@ import (
 	"os"
 	"strings"
 
-	"cloud.google.com/go/storage"
 	"github.com/magefile/mage/sh"
 )
-
-func GoogleBootstrapBackend(ctx context.Context, projectID string, location string, bucketName string) error {
-	fmt.Println("bootstrapping google backend...")
-
-	client, err := storage.NewClient(ctx)
-	if err != nil {
-		return err
-	}
-	defer client.Close()
-
-	if err := client.Bucket(bucketName).Create(ctx, projectID, &storage.BucketAttrs{
-		Location:          location,
-		VersioningEnabled: true,
-	}); err != nil {
-		return err
-	}
-
-	fmt.Println("google backend bootstrapped...")
-	return nil
-}
 
 func GoogleGenerate(ctx context.Context) error {
 	fmt.Println("running google generation...")

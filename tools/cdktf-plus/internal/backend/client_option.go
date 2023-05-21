@@ -2,6 +2,7 @@ package backend
 
 import (
 	"context"
+	"fmt"
 
 	"cloud.google.com/go/storage"
 	"github.com/aws/aws-sdk-go-v2/config"
@@ -10,11 +11,15 @@ import (
 )
 
 func WithAWSAuthentication(ctx context.Context) clientOption {
-	return &awsAuthentication{}
+	return &awsAuthentication{
+		ctx: ctx,
+	}
 }
 
 func WithGoogleAuthentication(ctx context.Context) clientOption {
-	return &googleAuthentication{}
+	return &googleAuthentication{
+		ctx: ctx,
+	}
 }
 
 type awsAuthentication struct {
@@ -22,6 +27,10 @@ type awsAuthentication struct {
 }
 
 func (a awsAuthentication) apply(c *client) error {
+	if a.ctx == nil {
+		return fmt.Errorf("nil context")
+	}
+
 	cfg, err := config.LoadDefaultConfig(a.ctx)
 	if err != nil {
 		return err
@@ -38,6 +47,10 @@ type googleAuthentication struct {
 }
 
 func (g googleAuthentication) apply(c *client) error {
+	if g.ctx == nil {
+		return fmt.Errorf("nil context")
+	}
+
 	var err error
 	c.cloudStorageClient, err = storage.NewClient(g.ctx)
 	if err != nil {

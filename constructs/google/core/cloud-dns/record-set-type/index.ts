@@ -11,6 +11,7 @@ export enum RecordSetType {
   NAPTR = "NAPTR",
   NS = "NS",
   PTR = "PTR",
+  SOA = "SOA",
   SPF = "SPF",
   SRV = "SRV",
   SSHFP = "SSHFP",

@@ -7,6 +7,9 @@ import { CloudKMSRoles } from "../../../core/iam";
 export interface CryptoKeyConfig {
   readonly keyRing: IKeyRing;
   readonly name: string;
+  readonly labels?: {
+    [key: string]: string;
+  };
 }
 
 export class CryptoKey extends Construct {
@@ -18,6 +21,7 @@ export class CryptoKey extends Construct {
     this.resource = new kmsCryptoKey.KmsCryptoKey(this, "resource", {
       keyRing: config.keyRing.id,
       name: config.name,
+      labels: config.labels,
     });
   }
 

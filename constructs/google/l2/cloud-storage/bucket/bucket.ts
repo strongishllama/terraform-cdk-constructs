@@ -12,6 +12,9 @@ export interface BucketConfig {
   readonly location: Region;
   readonly cryptoKey?: CryptoKey;
   readonly dependsOn?: ITerraformDependable[];
+  readonly labels?: {
+    [key: string]: string;
+  };
 }
 
 export class Bucket extends Construct {
@@ -34,6 +37,7 @@ export class Bucket extends Construct {
       name: config.name,
       encryption: encryption,
       dependsOn: config.dependsOn,
+      labels: config.labels,
     });
   }
 

@@ -110,7 +110,7 @@ func awsGenerateIAM(ctx context.Context) error {
 		counter--
 	}
 
-	if err := os.WriteFile("./constructs/aws/core/iam/action/index.ts", actionsOutput.Bytes(), 0o744); err != nil {
+	if err := os.WriteFile("./constructs/aws/core/iam/action/action.ts", actionsOutput.Bytes(), 0o744); err != nil {
 		return err
 	}
 

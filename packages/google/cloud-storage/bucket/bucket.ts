@@ -1,8 +1,8 @@
 import { Construct } from "constructs";
 import { kmsCryptoKeyIamMember, storageBucket, storageBucketIamMember } from "@cdktf/provider-google";
-import { Region } from "../../../core/compute/region/region";
+import { Region } from "../../../../google-core/compute/region/region";
 import { GrantConfig, IGrantable } from "../../iam";
-import { StorageRoles } from "../../../core/iam";
+import { StorageRoles } from "../../../../google-core/iam";
 import { CryptoKey } from "../../cloud-kms";
 import { StorageBucketEncryption } from "@cdktf/provider-google/lib/storage-bucket";
 import { ITerraformDependable } from "cdktf/lib/terraform-dependable";

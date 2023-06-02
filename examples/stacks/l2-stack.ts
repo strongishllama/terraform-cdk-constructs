@@ -2,12 +2,12 @@ import { env } from "process";
 import { Construct } from "constructs";
 import { TerraformStack } from "cdktf";
 import { GoogleProvider } from "@cdktf/provider-google/lib/provider";
-import { Region } from "../../google/core/compute/region/region";
-import { CryptoKey, KeyRing } from "../../google/l2/cloud-kms";
-import { Bucket, ServiceAgent } from "../../google/l2/cloud-storage";
-import { ServiceAccount } from "../../google/l2/iam";
-import { Location } from "../../google/core/cloud-kms";
-import { Project } from "../../google/l2/project/project";
+import { Region } from "../../packages/google-core/compute/region/region";
+import { CryptoKey, KeyRing } from "../../packages/google/l2/cloud-kms";
+import { Bucket, ServiceAgent } from "../../packages/google/l2/cloud-storage";
+import { ServiceAccount } from "../../packages/google/l2/iam";
+import { Location } from "../../packages/google-core/cloud-kms";
+import { Project } from "../../packages/google/l2/project/project";
 
 export class L2Stack extends TerraformStack {
   constructor(scope: Construct, id: string) {

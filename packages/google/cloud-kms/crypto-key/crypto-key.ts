@@ -2,7 +2,7 @@ import { Construct } from "constructs";
 import { kmsCryptoKey, kmsCryptoKeyIamMember } from "@cdktf/provider-google";
 import { IKeyRing } from "../key-ring/key-ring";
 import { GrantConfig, IGrantable } from "../../iam";
-import { CloudKMSRoles } from "../../../core/iam";
+import { CloudKMSRoles } from "../../../../google-core/iam";
 
 export interface CryptoKeyConfig {
   readonly keyRing: IKeyRing;

@@ -3,7 +3,7 @@ import { Construct } from "constructs";
 import { TerraformStack } from "cdktf";
 import { kmsCryptoKey, kmsCryptoKeyIamMember, serviceAccount, storageBucket, storageBucketIamMember } from "@cdktf/provider-google";
 import { GoogleProvider } from "@cdktf/provider-google/lib/provider";
-import { Region } from "../../google/core/compute/region/region";
+import { Region } from "../../packages/google-core/compute/region/region";
 import { DataGoogleKmsKeyRing } from "@cdktf/provider-google/lib/data-google-kms-key-ring";
 import { DataGoogleProject } from "@cdktf/provider-google/lib/data-google-project";
 

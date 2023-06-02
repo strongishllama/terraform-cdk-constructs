@@ -1,6 +1,6 @@
 # CDKTF files and directories.
+packages/**/*.js
 **/*.d.ts
-**/*.js
 **/node_modules
 **/cdktf.out
 **/cdktf.log

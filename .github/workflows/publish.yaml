@@ -25,9 +25,25 @@ jobs:
       path: packages/
   test:
     name: Test
-    uses: strongishllama/github-actions/.github/workflows/npm-build.yaml@main
-    with:
-      path: packages/
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          registry-url: https://registry.npmjs.org
+          scope: ${{ inputs.scope }}
+      - name: Updated Package Version
+        run: |
+          npm run lerna -- version ${{ needs.bump-tag.outputs.bumped-tag }} --no-git-tag-version --no-push --yes
+        working-directory: .
+      - name: Install Dependencies
+        run: npm run lerna -- exec "npm install"
+        working-directory: .
+      - name: Build
+        run: npm run lerna -- run build
   bump-tag:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs:

@@ -75,8 +75,7 @@ jobs:
           registry-url: https://registry.npmjs.org
           scope: ${{ inputs.scope }}
       - name: Updated Package Version
-        run: |
-          npm run lerna -- version ${{ needs.bump-tag.outputs.bumped-tag }} --no-git-tag-version --no-push --yes
+        run: npm run lerna -- version ${{ needs.bump-tag.outputs.bumped-tag }} --yes
         working-directory: .
       - name: Install Dependencies
         run: |
@@ -87,7 +86,7 @@ jobs:
         run: npm run lerna:build
         working-directory: .
       - name: Publish
-        run: npm run lerna -- publish ${{ needs.bump-tag.outputs.bumped-tag }} --force-publish=* --no-git-tag-version --no-push --yes
+        run: npm run lerna -- publish ${{ needs.bump-tag.outputs.bumped-tag }} --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm-token }}
         working-directory: .

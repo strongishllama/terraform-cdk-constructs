@@ -1,5 +1,10 @@
 {
+  "access": "public",
+  "gitTagVersion": false,
+  "forcePublish": true,
+  "push": false,
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
-  "useWorkspaces": true,
-  "version": "0.1.0"
+  "verifyAccess": false,
+  "version": "0.0.7",
+  "useWorkspaces": true
 }

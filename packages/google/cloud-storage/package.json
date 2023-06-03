@@ -11,6 +11,9 @@
     "get": "cdktf get",
     "format": "prettier --write '**/*.ts'",
     "format-check": "prettier --check '**/*.ts'",
+    "jsii:build": "jsii",
+    "jsii:build:watch": "jsii --watch",
+    "jsii:package": "jsii-pacmak",
     "synth": "cdktf synth",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -32,6 +35,8 @@
     "@types/jest": "^29.5.1",
     "@types/node": "^18.15.0",
     "jest": "^29.5.0",
+    "jsii": "^5.1.0",
+    "jsii-pacmak": "^1.82.0",
     "lerna": "^6.6.2",
     "prettier": "^2.8.8",
     "ts-jest": "^29.0.5",
@@ -48,5 +53,32 @@
   "repository": {
     "url": "https://github.com/strongihsan/terraform-cdk-constructs",
     "type": "git"
+  },
+  "stability": "experimental",
+  "jsii": {
+    "outdir": "dist",
+    "versionFormat": "full",
+    "targets": {
+      "java": {
+        "package": "terraform.cdk.constructs.google.cloud.storage",
+        "maven": {
+          "groupId": "terraform-cdk-constructs",
+          "artifactId": "google-cloud-storage"
+        }
+      },
+      "python": {
+        "distName": "terraform-cdk-constructs.google-cloud-storage",
+        "module": "terraform_cdk_constructs.google_cloud_storage"
+      },
+      "dotnet": {
+        "namespace": "TerraformCdkConstructs",
+        "packageId": "GoogleIam",
+        "iconUrl": "https://raw.githubusercontent.com/todo.png"
+      },
+      "go": {
+        "moduleName": "github.com/strongishllama/terraform-cdk-constructs/google-cloud-storage",
+        "packageName": "google_cloud_storage"
+      }
+    }
   }
 }

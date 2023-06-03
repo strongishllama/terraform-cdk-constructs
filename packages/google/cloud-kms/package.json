@@ -21,7 +21,7 @@
     "node": ">=14.0"
   },
   "dependencies": {
-    "@terraform-cdk-constructs/google-core": "^0.1.0",
+    "@terraform-cdk-constructs/google-core": "*",
     "cdktf": "^0.16.3",
     "constructs": "^10.1.274"
   },

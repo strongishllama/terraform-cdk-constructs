@@ -4,16 +4,16 @@ on:
     branches:
       - main
     paths:
+      - "!**/*.md"
       - packages/**
-      - "!packages/.prettierrc"
       - .github/workflows/publish.yaml
   pull_request:
     branches:
       - main
     paths:
+      - "!**/*.md"
       - packages/**
       - "!.prettierrc"
-      - "!packages/.prettierrc"
       - .github/workflows/publish.yaml
 permissions:
   contents: write

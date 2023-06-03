@@ -1,11 +1,12 @@
 import { Construct } from "constructs";
-import { kmsCryptoKeyIamMember, storageBucket, storageBucketIamMember } from "@cdktf/provider-google";
+import { storageBucket } from "@cdktf/provider-google";
 import { Region } from "@terraform-cdk-constructs/google-compute-engine";
 import { GrantConfig, IGrantable } from "../../iam";
 import { StorageRoles } from "@terraform-cdk-constructs/google-iam";
 import { CryptoKey } from "../../cloud-kms";
 import { StorageBucketEncryption } from "@cdktf/provider-google/lib/storage-bucket";
 import { ITerraformDependable } from "cdktf/lib/terraform-dependable";
+import { BucketGrant } from "./grant";
 
 export interface BucketConfig {
   readonly name: string;
@@ -41,39 +42,38 @@ export class Bucket extends Construct {
     });
   }
 
-  public grantAdmin(grantee: IGrantable): [storageBucketIamMember.StorageBucketIamMember, kmsCryptoKeyIamMember.KmsCryptoKeyIamMember | undefined] {
+  public grantAdmin(grantee: IGrantable): BucketGrant {
     return this.grant(grantee, {
       id: this.resource.name,
       role: StorageRoles.OBJECT_ADMIN,
     });
   }
 
-  public grantCreate(grantee: IGrantable): [storageBucketIamMember.StorageBucketIamMember, kmsCryptoKeyIamMember.KmsCryptoKeyIamMember | undefined] {
+  public grantCreate(grantee: IGrantable): BucketGrant {
     return this.grant(grantee, {
       id: this.resource.name,
       role: StorageRoles.OBJECT_CREATOR,
     });
   }
 
-  public grantView(grantee: IGrantable): [storageBucketIamMember.StorageBucketIamMember, kmsCryptoKeyIamMember.KmsCryptoKeyIamMember | undefined] {
+  public grantView(grantee: IGrantable): BucketGrant {
     return this.grant(grantee, {
       id: this.resource.name,
       role: StorageRoles.OBJECT_VIEWER,
     });
   }
 
-  private grant(grantee: IGrantable, config: GrantConfig): [storageBucketIamMember.StorageBucketIamMember, kmsCryptoKeyIamMember.KmsCryptoKeyIamMember | undefined] {
-    const bucketMember = new storageBucketIamMember.StorageBucketIamMember(this, "member", {
+  private grant(grantee: IGrantable, config: GrantConfig): BucketGrant {
+    let cryptoKeyGrant = undefined;
+    if (this.cryptoKey !== undefined) {
+      cryptoKeyGrant = this.cryptoKey.grantEncrypterDecrypter(grantee);
+    }
+
+    return new BucketGrant(this, "grant", {
       bucket: config.id,
       member: grantee.grantMember,
       role: config.role,
+      cryptoKeyMember: cryptoKeyGrant?.member,
     });
-
-    const cryptoKeyMember = undefined;
-    if (this.cryptoKey !== undefined) {
-      this.cryptoKey.grantEncrypterDecrypter(grantee);
-    }
-
-    return [bucketMember, cryptoKeyMember];
   }
 }

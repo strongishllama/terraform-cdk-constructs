@@ -34,8 +34,7 @@
   },
   "workspaces": {
     "packages": [
-      "packages/aws-core",
-      "packages/google-core",
+      "packages/aws/*",
       "packages/google/*"
     ]
   }

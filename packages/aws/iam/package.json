@@ -1,5 +1,5 @@
 {
-  "name": "@terraform-cdk-constructs/aws-core",
+  "name": "@terraform-cdk-constructs/aws-iam",
   "version": "0.0.0",
   "main": "index.js",
   "types": "index.ts",

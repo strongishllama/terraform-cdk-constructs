@@ -35,6 +35,9 @@ export enum Location {
   // HSM Available: true
   ASIA1 = "asia1",
   // EKM Available: true
+  // HSM Available: false
+  AU = "au",
+  // EKM Available: true
   // HSM Available: true
   AUSTRALIA_SOUTHEAST1 = "australia-southeast1",
   // EKM Available: true

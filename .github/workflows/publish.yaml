@@ -4,16 +4,16 @@ on:
     branches:
       - main
     paths:
-      - constructs/**
-      - "!constructs/.prettierrc"
+      - packages/**
+      - "!packages/.prettierrc"
       - .github/workflows/publish.yaml
   pull_request:
     branches:
       - main
     paths:
-      - constructs/**
+      - packages/**
       - "!.prettierrc"
-      - "!constructs/.prettierrc"
+      - "!packages/.prettierrc"
       - .github/workflows/publish.yaml
 permissions:
   contents: write
@@ -22,12 +22,12 @@ jobs:
     name: Lint
     uses: strongishllama/github-actions/.github/workflows/npm-lint.yaml@main
     with:
-      path: constructs/
+      path: packages/
   test:
     name: Test
     uses: strongishllama/github-actions/.github/workflows/npm-build.yaml@main
     with:
-      path: constructs/
+      path: packages/
   bump-tag:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs:
@@ -51,10 +51,28 @@ jobs:
       - bump-tag
       - release
     name: Publish
-    uses: strongishllama/github-actions/.github/workflows/npm-publish.yaml@main
-    with:
-      scope: "@strongishllama"
-      package-version: ${{ needs.bump-tag.outputs.bumped-tag }}
-      path: constructs/
-    secrets:
-      npm-token: ${{ secrets.NPM_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          registry-url: https://registry.npmjs.org
+          scope: ${{ inputs.scope }}
+      - name: Updated Package Version
+        run: |
+          npm run lerna -- version ${{ needs.bump-tag.outputs.bumped-tag }} --no-git-tag-version --no-push --yes
+        working-directory: .
+      - name: Install Dependencies
+        run: npm run lerna -- exec "npm install"
+        working-directory: .
+      - name: Build
+        run: npm run lerna -- run build
+        working-directory: .
+      - name: Publish
+        run: npm run lerna -- publish ${{ needs.bump-tag.outputs.bumped-tag }} --force-publish=* --no-git-tag-version --no-push --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm-token }}
+        working-directory: .

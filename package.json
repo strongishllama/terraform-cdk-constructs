@@ -5,17 +5,10 @@
   "types": "main.ts",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "compile": "tsc --pretty",
-    "get": "cdktf get",
     "format": "prettier --write '**/*.ts'",
     "format-check": "prettier --check '**/*.ts'",
-    "synth": "cdktf synth",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "upgrade": "npm i cdktf@latest cdktf-cli@latest",
-    "upgrade:next": "npm i cdktf@next cdktf-cli@next",
-    "watch": "tsc -w"
+    "install": "lerna exec 'npm install'",
+    "lerna": "lerna"
   },
   "engines": {
     "node": ">=14.0"

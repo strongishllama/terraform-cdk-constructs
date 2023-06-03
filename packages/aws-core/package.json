@@ -1,8 +1,8 @@
 {
-  "name": "terraform-cdk-constructs",
+  "name": "@terraform-cdk-constructs/aws-core",
   "version": "0.0.0",
-  "main": "main.js",
-  "types": "main.ts",
+  "main": "index.js",
+  "types": "index.ts",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
@@ -37,12 +37,5 @@
   },
   "peerDependencies": {
     "@cdktf/provider-google": "^7.0.6"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/aws-core",
-      "packages/google-core",
-      "packages/google/*"
-    ]
   }
 }

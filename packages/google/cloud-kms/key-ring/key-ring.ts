@@ -1,7 +1,7 @@
 import { Construct } from "constructs";
 import { kmsKeyRing } from "@cdktf/provider-google";
 import { DataGoogleKmsKeyRing } from "@cdktf/provider-google/lib/data-google-kms-key-ring";
-import { Location } from "../../../../google-core/cloud-kms";
+import { Location } from "@terraform-cdk-constructs/aws-core";
 
 export interface KeyRingConfig {
   readonly location: Location;

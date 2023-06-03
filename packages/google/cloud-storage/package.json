@@ -1,8 +1,8 @@
 {
-  "name": "terraform-cdk-constructs",
+  "name": "@terraform-cdk-constructs/google-cloud-storage",
   "version": "0.0.0",
-  "main": "main.js",
-  "types": "main.ts",
+  "main": "index.js",
+  "types": "index.ts",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "cdktf": "^0.16.3",
-    "constructs": "^10.1.274"
+    "constructs": "^10.1.274",
+    "@terraform-cdk-constructs/google-core": "*"
   },
   "devDependencies": {
     "@cdktf/provider-google": "^7.0.6",
@@ -37,12 +38,5 @@
   },
   "peerDependencies": {
     "@cdktf/provider-google": "^7.0.6"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/aws-core",
-      "packages/google-core",
-      "packages/google/*"
-    ]
   }
 }

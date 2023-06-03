@@ -42,7 +42,7 @@
   },
   "author": {
     "name": "Taliesin Millhouse",
-    "email": "taliesin@millhouse.dev"
+    "url": "https://millhouse.dev"
   },
   "repository": {
     "url": "https://github.com/strongihsan/terraform-cdk-constructs",

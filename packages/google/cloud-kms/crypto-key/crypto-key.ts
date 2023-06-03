@@ -2,7 +2,7 @@ import { Construct } from "constructs";
 import { kmsCryptoKey, kmsCryptoKeyIamMember } from "@cdktf/provider-google";
 import { IKeyRing } from "../key-ring/key-ring";
 import { GrantConfig, IGrantable } from "../../iam";
-import { CloudKMSRoles } from "@terraform-cdk-constructs/google-core";
+import { CloudKMSRoles } from "@terraform-cdk-constructs/google-iam";
 
 export interface CryptoKeyConfig {
   readonly keyRing: IKeyRing;

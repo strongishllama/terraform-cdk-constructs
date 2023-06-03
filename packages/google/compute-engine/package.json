@@ -1,5 +1,5 @@
 {
-  "name": "@terraform-cdk-constructs/google-cloud-kms",
+  "name": "@terraform-cdk-constructs/google-compute-engine",
   "version": "0.0.0",
   "main": "index.js",
   "types": "index.ts",
@@ -21,7 +21,6 @@
     "node": ">=14.0"
   },
   "dependencies": {
-    "@terraform-cdk-constructs/google-iam": "*",
     "cdktf": "^0.16.3",
     "constructs": "^10.1.274"
   },

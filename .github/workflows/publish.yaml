@@ -34,7 +34,6 @@ jobs:
         with:
           node-version: 16.x
           registry-url: https://registry.npmjs.org
-        working-directory: .
       - name: Install Dependencies
         run: npm run lerna -- exec "npm install"
         working-directory: .

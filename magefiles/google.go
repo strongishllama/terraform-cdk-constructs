@@ -55,7 +55,7 @@ func googleGenerateCloudKMS(ctx context.Context) error {
 	}
 	locationsOutput.WriteString("}\n")
 
-	if err := os.WriteFile("./packages/google-core/cloud-kms/location/location.ts", locationsOutput.Bytes(), 0o744); err != nil {
+	if err := os.WriteFile("./packages/google/cloud-kms/location/location.ts", locationsOutput.Bytes(), 0o744); err != nil {
 		return err
 	}
 
@@ -64,7 +64,7 @@ func googleGenerateCloudKMS(ctx context.Context) error {
 
 func googleGenerateCompute(ctx context.Context) error {
 	stdout := &bytes.Buffer{}
-	_, err := sh.Exec(nil, stdout, os.Stderr, "gcloud", "compute", "regions", "list", "--format=json")
+	_, err := sh.Exec(nil, stdout, os.Stderr, "gcloud", "compute-engine", "regions", "list", "--format=json")
 	if err != nil {
 		return err
 	}
@@ -88,7 +88,7 @@ func googleGenerateCompute(ctx context.Context) error {
 	}
 	regionsOutput.WriteString("}\n")
 
-	if err := os.WriteFile("./packages/google-core/compute/region/region.ts", regionsOutput.Bytes(), 0o744); err != nil {
+	if err := os.WriteFile("./packages/google/compute-engine/region/region.ts", regionsOutput.Bytes(), 0o744); err != nil {
 		return err
 	}
 
@@ -105,7 +105,7 @@ func googleGenerateCompute(ctx context.Context) error {
 	}
 	zonesOutput.WriteString("}\n")
 
-	if err := os.WriteFile("./packages/google-core/compute/zone/zone.ts", zonesOutput.Bytes(), 0o744); err != nil {
+	if err := os.WriteFile("./packages/google/compute-engine/zone/zone.ts", zonesOutput.Bytes(), 0o744); err != nil {
 		return err
 	}
 

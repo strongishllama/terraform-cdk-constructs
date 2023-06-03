@@ -7,7 +7,8 @@
   "scripts": {
     "format": "prettier --write '**/*.ts'",
     "format-check": "prettier --check '**/*.ts'",
-    "install": "lerna exec 'npm install'",
+    "lerna:build": "lerna run build",
+    "lerna:install": "lerna exec 'npm install'",
     "lerna": "lerna"
   },
   "engines": {

@@ -1,6 +1,7 @@
 {
   "name": "@terraform-cdk-constructs/aws-iam",
   "version": "0.0.0",
+  "description": "Terraform CDK Constructs for AWS IAM",
   "main": "index.js",
   "types": "index.ts",
   "license": "MIT",
@@ -37,5 +38,13 @@
   },
   "peerDependencies": {
     "@cdktf/provider-google": "^7.0.6"
+  },
+  "author": {
+    "name": "Taliesin Millhouse",
+    "email": "taliesin@millhouse.dev"
+  },
+  "repository": {
+    "url": "https://github.com/strongihsan/terraform-cdk-constructs",
+    "type": "git"
   }
 }

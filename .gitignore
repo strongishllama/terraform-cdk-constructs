@@ -1,4 +1,5 @@
 # CDKTF files and directories.
+__tests__/**/*.js
 packages/**/*.js
 **/*.d.ts
 **/node_modules

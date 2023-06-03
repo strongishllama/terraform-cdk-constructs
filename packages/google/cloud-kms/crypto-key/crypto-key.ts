@@ -1,9 +1,8 @@
 import { Construct } from "constructs";
-import { kmsCryptoKey } from "@cdktf/provider-google";
+import { kmsCryptoKey, kmsCryptoKeyIamMember } from "@cdktf/provider-google";
 import { IKeyRing } from "../key-ring/key-ring";
 import { GrantConfig, IGrantable } from "../../iam";
 import { CloudKMSRoles } from "@terraform-cdk-constructs/google-iam";
-import { CryptoKeyGrant } from "./grant";
 
 export interface CryptoKeyConfig {
   readonly keyRing: IKeyRing;
@@ -34,29 +33,29 @@ export class CryptoKey extends Construct {
     return this.resource.id;
   }
 
-  public grantAdmin(grantee: IGrantable): CryptoKeyGrant {
+  public grantAdmin(grantee: IGrantable): void {
     return this.grant(grantee, {
       id: this.resource.id,
       role: CloudKMSRoles.ADMIN,
     });
   }
 
-  public grantEncrypterDecrypter(grantee: IGrantable): CryptoKeyGrant {
+  public grantEncrypterDecrypter(grantee: IGrantable): void {
     return this.grant(grantee, {
       id: this.resource.id,
       role: CloudKMSRoles.ENCRYPTER_DECRYPTER,
     });
   }
 
-  public grantViewer(grantee: IGrantable): CryptoKeyGrant {
+  public grantViewer(grantee: IGrantable): void {
     return this.grant(grantee, {
       id: this.resource.id,
       role: CloudKMSRoles.VIEWER,
     });
   }
 
-  private grant(grantee: IGrantable, config: GrantConfig): CryptoKeyGrant {
-    return new CryptoKeyGrant(this, "grant", {
+  private grant(grantee: IGrantable, config: GrantConfig): void {
+    new kmsCryptoKeyIamMember.KmsCryptoKeyIamMember(this, "member", {
       cryptoKeyId: config.id,
       member: grantee.grantMember,
       role: config.role,

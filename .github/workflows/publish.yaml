@@ -88,5 +88,5 @@ jobs:
       - name: Publish
         run: npm run lerna -- publish ${{ needs.bump-tag.outputs.bumped-tag }} --yes
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm-token }}
+          NPM_TOKEN: ${{ secrets.npm-token }}
         working-directory: .

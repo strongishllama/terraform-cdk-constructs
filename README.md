@@ -11,7 +11,7 @@ The goal of this project is to provide a standard library of constructs for CDKT
 A couple of things to note as this is currently a 1 person operation and I'm doing this in my free time.
 
 - The code in this project are very experimental and may change at any time.
-- I am only publishing packages to NPM right now, but [JSII](https://github.com/aws/jsii) has been setup and the Typescript that is being written is regularly check that it is able to be transpiled into Java, dotNet, Go and Python, so support for those language may come in the future.
+- I am only publishing packages to NPM right now, but [JSII](https://github.com/aws/jsii) has been setup and the Typescript that is being written is regularly checked that it is able to be transpiled into Java, dotNet, Go and Python, so support for those language may come in the future.
 - The focus is mostly on GCP as that is where I spend most of my professional time at the moment, but that will hopefully expand in the future with the exception of AWS as there is the [AWS Adapter](https://developer.hashicorp.com/terraform/cdktf/create-and-deploy/aws-adapter).
 
 ## Contributing

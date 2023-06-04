@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@cdktf/provider-google": "7.0.9",
-    "@terraform-cdk-constructs/google-iam": "0.0.0",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.15.0",
     "constructs": "10.2.41",
@@ -46,7 +45,6 @@
   },
   "peerDependencies": {
     "@cdktf/provider-google": "^7.0.9",
-    "@terraform-cdk-constructs/google-iam": "0.0.0",
     "constructs": "^10.2.41"
   },
   "author": {

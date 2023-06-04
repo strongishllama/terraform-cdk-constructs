@@ -1,9 +1,8 @@
 import { Construct } from "constructs";
 import { storageBucket, storageBucketIamMember } from "@cdktf/provider-google";
 import { Region } from "@terraform-cdk-constructs/google-compute-engine";
-import { GrantConfig, IGrantable } from "../../iam";
-import { StorageRoles } from "@terraform-cdk-constructs/google-iam";
-import { CryptoKey } from "../../cloud-kms";
+import { GrantConfig, IGrantable, StorageRoles } from "@terraform-cdk-constructs/google-iam";
+import { CryptoKey } from "@terraform-cdk-constructs/google-cloud-kms";
 import { StorageBucketEncryption } from "@cdktf/provider-google/lib/storage-bucket";
 import { ITerraformDependable } from "cdktf/lib/terraform-dependable";
 

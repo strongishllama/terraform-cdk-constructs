@@ -5,7 +5,10 @@ export interface ServiceAccountConfig {
   readonly accountId: string;
 }
 
-export class ServiceAccount extends Construct {
+// TODO: Figure out a way to change the name of the class to ServiceAccount.
+//       Currently JSII complains about the name conflicting with the 'serviceAccount' import.
+//       This is not a problem with other L1 resources because they're prefix with their service name, i.e 'storageBucket'.
+export class IamServiceAccount extends Construct {
   public readonly grantMember: string;
   private readonly resource: serviceAccount.ServiceAccount;
 

@@ -49,7 +49,7 @@
     "url": "https://millhouse.dev"
   },
   "repository": {
-    "url": "https://github.com/strongihsan/terraform-cdk-constructs",
+    "url": "https://github.com/strongishllama/terraform-cdk-constructs",
     "type": "git"
   },
   "stability": "experimental",

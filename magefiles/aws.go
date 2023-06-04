@@ -11,6 +11,9 @@ import (
 	"regexp"
 	"sort"
 	"strings"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 func AWSGenerate(ctx context.Context) error {
@@ -72,7 +75,6 @@ func awsGenerateIAM(ctx context.Context) error {
 	for _, k := range keys {
 		formattedService := k
 		toReplace := []string{
-			" ",
 			"(",
 			")",
 			"-",
@@ -87,6 +89,10 @@ func awsGenerateIAM(ctx context.Context) error {
 		if formattedService[0] == '_' {
 			formattedService = formattedService[1:]
 		}
+
+		// We have to remove spaces after we removed all the other characters and converted it to PascalCase.
+		formattedService = cases.Title(language.AmericanEnglish).String(strings.ToLower(formattedService))
+		formattedService = strings.ReplaceAll(formattedService, " ", "")
 
 		actionsOutput.WriteString(fmt.Sprintf("export enum %s {\n", formattedService))
 

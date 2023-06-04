@@ -101,7 +101,7 @@ export enum AmplifyAdmin {
   UPDATE_BACKEND_STORAGE = "UpdateBackendStorage",
 }
 
-export enum AmplifyUIBuilder {
+export enum AmplifyUiBuilder {
   CREATE_COMPONENT = "CreateComponent",
   CREATE_FORM = "CreateForm",
   CREATE_THEME = "CreateTheme",
@@ -249,14 +249,14 @@ export enum AppRunner {
   UPDATE_VPC_INGRESS_CONNECTION = "UpdateVpcIngressConnection",
 }
 
-export enum App2Container {
+export enum App2container {
   GET_CONTAINERIZATION_JOB_DETAILS = "GetContainerizationJobDetails",
   GET_DEPLOYMENT_JOB_DETAILS = "GetDeploymentJobDetails",
   START_CONTAINERIZATION_JOB = "StartContainerizationJob",
   START_DEPLOYMENT_JOB = "StartDeploymentJob",
 }
 
-export enum AppConfig {
+export enum Appconfig {
   CREATE_APPLICATION = "CreateApplication",
   CREATE_CONFIGURATION_PROFILE = "CreateConfigurationProfile",
   CREATE_DEPLOYMENT_STRATEGY = "CreateDeploymentStrategy",
@@ -304,7 +304,7 @@ export enum AppConfig {
   VALIDATE_CONFIGURATION = "ValidateConfiguration",
 }
 
-export enum AppSync {
+export enum Appsync {
   ASSOCIATE_API = "AssociateApi",
   ASSOCIATE_MERGED_GRAPHQL_API = "AssociateMergedGraphqlApi",
   ASSOCIATE_SOURCE_GRAPHQL_API = "AssociateSourceGraphqlApi",
@@ -716,7 +716,7 @@ export enum BackupGateway {
   UPDATE_HYPERVISOR = "UpdateHypervisor",
 }
 
-export enum Backupstorage {
+export enum BackupStorage {
   COMMIT_BACKUP_JOB = "CommitBackupJob",
   DELETE_OBJECTS = "DeleteObjects",
   DESCRIBE_BACKUP_JOB = "DescribeBackupJob",
@@ -836,7 +836,7 @@ export enum BudgetService {
   VIEW_BUDGET = "ViewBudget",
 }
 
-export enum BugBust {
+export enum Bugbust {
   CREATE_EVENT = "CreateEvent",
   EVALUATE_PROFILING_GROUPS = "EvaluateProfilingGroups",
   GET_EVENT = "GetEvent",
@@ -945,7 +945,7 @@ export enum CleanRooms {
   UPDATE_PROTECTED_QUERY = "UpdateProtectedQuery",
 }
 
-export enum CloudControlAPI {
+export enum CloudControlApi {
   CANCEL_RESOURCE_REQUEST = "CancelResourceRequest",
   CREATE_RESOURCE = "CreateResource",
   DELETE_RESOURCE = "DeleteResource",
@@ -1018,7 +1018,7 @@ export enum Cloud9 {
   VALIDATE_ENVIRONMENT_NAME = "ValidateEnvironmentName",
 }
 
-export enum CloudFormation {
+export enum Cloudformation {
   ACTIVATE_TYPE = "ActivateType",
   BATCH_DESCRIBE_TYPE_CONFIGURATIONS = "BatchDescribeTypeConfigurations",
   CANCEL_UPDATE_STACK = "CancelUpdateStack",
@@ -1090,7 +1090,7 @@ export enum CloudFormation {
   VALIDATE_TEMPLATE = "ValidateTemplate",
 }
 
-export enum CloudHSM {
+export enum Cloudhsm {
   ADD_TAGS_TO_RESOURCE = "AddTagsToResource",
   COPY_BACKUP_TO_REGION = "CopyBackupToRegion",
   CREATE_CLUSTER = "CreateCluster",
@@ -1126,7 +1126,7 @@ export enum CloudHSM {
   UNTAG_RESOURCE = "UntagResource",
 }
 
-export enum CloudShell {
+export enum Cloudshell {
   CREATE_ENVIRONMENT = "CreateEnvironment",
   CREATE_SESSION = "CreateSession",
   DELETE_ENVIRONMENT = "DeleteEnvironment",
@@ -1138,7 +1138,7 @@ export enum CloudShell {
   STOP_ENVIRONMENT = "StopEnvironment",
 }
 
-export enum CloudTrail {
+export enum Cloudtrail {
   ADD_TAGS = "AddTags",
   CANCEL_QUERY = "CancelQuery",
   CREATE_CHANNEL = "CreateChannel",
@@ -1192,11 +1192,11 @@ export enum CloudTrail {
   UPDATE_TRAIL = "UpdateTrail",
 }
 
-export enum CloudTrailData {
+export enum CloudtrailData {
   PUT_AUDIT_EVENTS = "PutAuditEvents",
 }
 
-export enum CloudWatchRUM {
+export enum CloudwatchRum {
   BATCH_CREATE_RUM_METRIC_DEFINITIONS = "BatchCreateRumMetricDefinitions",
   BATCH_DELETE_RUM_METRIC_DEFINITIONS = "BatchDeleteRumMetricDefinitions",
   BATCH_GET_RUM_METRIC_DEFINITIONS = "BatchGetRumMetricDefinitions",
@@ -1216,7 +1216,7 @@ export enum CloudWatchRUM {
   UPDATE_RUM_METRIC_DEFINITION = "UpdateRumMetricDefinition",
 }
 
-export enum CodeArtifact {
+export enum Codeartifact {
   ASSOCIATE_EXTERNAL_CONNECTION = "AssociateExternalConnection",
   ASSOCIATE_WITH_DOWNSTREAM_REPOSITORY = "AssociateWithDownstreamRepository",
   COPY_PACKAGE_VERSIONS = "CopyPackageVersions",
@@ -1260,7 +1260,7 @@ export enum CodeArtifact {
   UPDATE_REPOSITORY = "UpdateRepository",
 }
 
-export enum CodeBuild {
+export enum Codebuild {
   BATCH_DELETE_BUILDS = "BatchDeleteBuilds",
   BATCH_GET_BUILD_BATCHES = "BatchGetBuildBatches",
   BATCH_GET_BUILDS = "BatchGetBuilds",
@@ -1316,7 +1316,7 @@ export enum CodeBuild {
   UPDATE_WEBHOOK = "UpdateWebhook",
 }
 
-export enum CodeCommit {
+export enum Codecommit {
   ASSOCIATE_APPROVAL_RULE_TEMPLATE_WITH_REPOSITORY = "AssociateApprovalRuleTemplateWithRepository",
   BATCH_ASSOCIATE_APPROVAL_RULE_TEMPLATE_WITH_REPOSITORIES = "BatchAssociateApprovalRuleTemplateWithRepositories",
   BATCH_DESCRIBE_MERGE_CONFLICTS = "BatchDescribeMergeConflicts",
@@ -1407,7 +1407,7 @@ export enum CodeCommit {
   UPLOAD_ARCHIVE = "UploadArchive",
 }
 
-export enum CodeDeploy {
+export enum Codedeploy {
   ADD_TAGS_TO_ON_PREMISES_INSTANCES = "AddTagsToOnPremisesInstances",
   BATCH_GET_APPLICATION_REVISIONS = "BatchGetApplicationRevisions",
   BATCH_GET_APPLICATIONS = "BatchGetApplications",
@@ -1458,14 +1458,14 @@ export enum CodeDeploy {
   UPDATE_DEPLOYMENT_GROUP = "UpdateDeploymentGroup",
 }
 
-export enum CodeDeploysecurehostcommandsservice {
+export enum CodedeploySecureHostCommandsService {
   GET_DEPLOYMENT_SPECIFICATION = "GetDeploymentSpecification",
   POLL_HOST_COMMAND = "PollHostCommand",
   PUT_HOST_COMMAND_ACKNOWLEDGEMENT = "PutHostCommandAcknowledgement",
   PUT_HOST_COMMAND_COMPLETE = "PutHostCommandComplete",
 }
 
-export enum CodePipeline {
+export enum Codepipeline {
   ACKNOWLEDGE_JOB = "AcknowledgeJob",
   ACKNOWLEDGE_THIRD_PARTY_JOB = "AcknowledgeThirdPartyJob",
   CREATE_CUSTOM_ACTION_TYPE = "CreateCustomActionType",
@@ -1507,7 +1507,7 @@ export enum CodePipeline {
   UPDATE_PIPELINE = "UpdatePipeline",
 }
 
-export enum CodeStar {
+export enum Codestar {
   ASSOCIATE_TEAM_MEMBER = "AssociateTeamMember",
   CREATE_PROJECT = "CreateProject",
   CREATE_USER_PROFILE = "CreateUserProfile",
@@ -1532,7 +1532,7 @@ export enum CodeStar {
   VERIFY_SERVICE_ROLE = "VerifyServiceRole",
 }
 
-export enum CodeStarConnections {
+export enum CodestarConnections {
   CREATE_CONNECTION = "CreateConnection",
   CREATE_HOST = "CreateHost",
   DELETE_CONNECTION = "DeleteConnection",
@@ -1556,7 +1556,7 @@ export enum CodeStarConnections {
   USE_CONNECTION = "UseConnection",
 }
 
-export enum CodeStarNotifications {
+export enum CodestarNotifications {
   CREATE_NOTIFICATION_RULE = "CreateNotificationRule",
   DELETE_NOTIFICATION_RULE = "DeleteNotificationRule",
   DELETE_TARGET = "DeleteTarget",
@@ -1804,7 +1804,7 @@ export enum CostExplorerService {
   UPDATE_REPORT = "UpdateReport",
 }
 
-export enum CostandUsageReport {
+export enum CostAndUsageReport {
   DELETE_REPORT_DEFINITION = "DeleteReportDefinition",
   DESCRIBE_REPORT_DEFINITIONS = "DescribeReportDefinitions",
   GET_CLASSIC_REPORT = "GetClassicReport",
@@ -1881,7 +1881,7 @@ export enum DataPipeline {
   VALIDATE_PIPELINE_DEFINITION = "ValidatePipelineDefinition",
 }
 
-export enum DataSync {
+export enum Datasync {
   ADD_STORAGE_SYSTEM = "AddStorageSystem",
   CANCEL_TASK_EXECUTION = "CancelTaskExecution",
   CREATE_AGENT = "CreateAgent",
@@ -2060,7 +2060,7 @@ export enum DatabaseMigrationService {
   UPLOAD_FILE_METADATA_LIST = "UploadFileMetadataList",
 }
 
-export enum DeepComposer {
+export enum Deepcomposer {
   ASSOCIATE_COUPON = "AssociateCoupon",
   CREATE_AUDIO = "CreateAudio",
   CREATE_COMPOSITION = "CreateComposition",
@@ -2081,7 +2081,7 @@ export enum DeepComposer {
   UPDATE_MODEL = "UpdateModel",
 }
 
-export enum DeepLens {
+export enum Deeplens {
   ASSOCIATE_SERVICE_ROLE_TO_ACCOUNT = "AssociateServiceRoleToAccount",
   BATCH_GET_DEVICE = "BatchGetDevice",
   BATCH_GET_MODEL = "BatchGetModel",
@@ -2108,7 +2108,7 @@ export enum DeepLens {
   UPDATE_PROJECT = "UpdateProject",
 }
 
-export enum DeepRacer {
+export enum Deepracer {
   ADD_LEADERBOARD_ACCESS_PERMISSION = "AddLeaderboardAccessPermission",
   ADMIN_GET_ACCOUNT_CONFIG = "AdminGetAccountConfig",
   ADMIN_LIST_ASSOCIATED_RESOURCES = "AdminListAssociatedResources",
@@ -2549,7 +2549,7 @@ export enum ElasticLoadBalancing {
   SET_LOAD_BALANCER_POLICIES_OF_LISTENER = "SetLoadBalancerPoliciesOfListener",
 }
 
-export enum ElementalAppliancesandSoftware {
+export enum ElementalAppliancesAndSoftware {
   COMPLETE_UPLOAD = "CompleteUpload",
   CREATE_ORDER_V1 = "CreateOrderV1",
   CREATE_QUOTE = "CreateQuote",
@@ -2569,7 +2569,7 @@ export enum ElementalAppliancesandSoftware {
   UPDATE_QUOTE = "UpdateQuote",
 }
 
-export enum ElementalAppliancesandSoftwareActivationService {
+export enum ElementalAppliancesAndSoftwareActivationService {
   COMPLETE_ACCOUNT_REGISTRATION = "CompleteAccountRegistration",
   COMPLETE_FILE_UPLOAD = "CompleteFileUpload",
   DOWNLOAD_SOFTWARE = "DownloadSoftware",
@@ -2582,7 +2582,7 @@ export enum ElementalAppliancesandSoftwareActivationService {
   UNTAG_RESOURCE = "UntagResource",
 }
 
-export enum ElementalMediaConnect {
+export enum ElementalMediaconnect {
   ADD_BRIDGE_OUTPUTS = "AddBridgeOutputs",
   ADD_BRIDGE_SOURCES = "AddBridgeSources",
   ADD_FLOW_MEDIA_STREAMS = "AddFlowMediaStreams",
@@ -2638,7 +2638,7 @@ export enum ElementalMediaConnect {
   UPDATE_GATEWAY_INSTANCE = "UpdateGatewayInstance",
 }
 
-export enum ElementalMediaConvert {
+export enum ElementalMediaconvert {
   ASSOCIATE_CERTIFICATE = "AssociateCertificate",
   CANCEL_JOB = "CancelJob",
   CREATE_JOB = "CreateJob",
@@ -2669,7 +2669,7 @@ export enum ElementalMediaConvert {
   UPDATE_QUEUE = "UpdateQueue",
 }
 
-export enum ElementalMediaLive {
+export enum ElementalMedialive {
   ACCEPT_INPUT_DEVICE_TRANSFER = "AcceptInputDeviceTransfer",
   BATCH_DELETE = "BatchDelete",
   BATCH_START = "BatchStart",
@@ -2731,7 +2731,7 @@ export enum ElementalMediaLive {
   UPDATE_RESERVATION = "UpdateReservation",
 }
 
-export enum ElementalMediaPackage {
+export enum ElementalMediapackage {
   CONFIGURE_LOGS = "ConfigureLogs",
   CREATE_CHANNEL = "CreateChannel",
   CREATE_HARVEST_JOB = "CreateHarvestJob",
@@ -2753,7 +2753,7 @@ export enum ElementalMediaPackage {
   UPDATE_ORIGIN_ENDPOINT = "UpdateOriginEndpoint",
 }
 
-export enum ElementalMediaPackageV2 {
+export enum ElementalMediapackageV2 {
   CREATE_CHANNEL = "CreateChannel",
   CREATE_CHANNEL_GROUP = "CreateChannelGroup",
   CREATE_ORIGIN_ENDPOINT = "CreateOriginEndpoint",
@@ -2783,7 +2783,7 @@ export enum ElementalMediaPackageV2 {
   UPDATE_ORIGIN_ENDPOINT = "UpdateOriginEndpoint",
 }
 
-export enum ElementalMediaPackageVOD {
+export enum ElementalMediapackageVod {
   CONFIGURE_LOGS = "ConfigureLogs",
   CREATE_ASSET = "CreateAsset",
   CREATE_PACKAGING_CONFIGURATION = "CreatePackagingConfiguration",
@@ -2803,7 +2803,7 @@ export enum ElementalMediaPackageVOD {
   UPDATE_PACKAGING_GROUP = "UpdatePackagingGroup",
 }
 
-export enum ElementalMediaStore {
+export enum ElementalMediastore {
   CREATE_CONTAINER = "CreateContainer",
   DELETE_CONTAINER = "DeleteContainer",
   DELETE_CONTAINER_POLICY = "DeleteContainerPolicy",
@@ -2832,7 +2832,7 @@ export enum ElementalMediaStore {
   UNTAG_RESOURCE = "UntagResource",
 }
 
-export enum ElementalMediaTailor {
+export enum ElementalMediatailor {
   CONFIGURE_LOGS_FOR_CHANNEL = "ConfigureLogsForChannel",
   CONFIGURE_LOGS_FOR_PLAYBACK_CONFIGURATION = "ConfigureLogsForPlaybackConfiguration",
   CREATE_CHANNEL = "CreateChannel",
@@ -3230,7 +3230,7 @@ export enum Glue {
   USE_M_L_TRANSFORMS = "UseMLTransforms",
 }
 
-export enum GlueDataBrew {
+export enum GlueDatabrew {
   BATCH_DELETE_RECIPE_VERSION = "BatchDeleteRecipeVersion",
   CREATE_DATASET = "CreateDataset",
   CREATE_PROFILE_JOB = "CreateProfileJob",
@@ -3313,7 +3313,7 @@ export enum GroundStation {
   UPDATE_MISSION_PROFILE = "UpdateMissionProfile",
 }
 
-export enum HealthAPIsandNotifications {
+export enum HealthApisAndNotifications {
   DESCRIBE_AFFECTED_ACCOUNTS_FOR_ORGANIZATION = "DescribeAffectedAccountsForOrganization",
   DESCRIBE_AFFECTED_ENTITIES = "DescribeAffectedEntities",
   DESCRIBE_AFFECTED_ENTITIES_FOR_ORGANIZATION = "DescribeAffectedEntitiesForOrganization",
@@ -3329,7 +3329,7 @@ export enum HealthAPIsandNotifications {
   ENABLE_HEALTH_SERVICE_ACCESS_FOR_ORGANIZATION = "EnableHealthServiceAccessForOrganization",
 }
 
-export enum IAMAccessAnalyzer {
+export enum IamAccessAnalyzer {
   APPLY_ARCHIVE_RULE = "ApplyArchiveRule",
   CANCEL_POLICY_GENERATION = "CancelPolicyGeneration",
   CREATE_ACCESS_PREVIEW = "CreateAccessPreview",
@@ -3360,7 +3360,7 @@ export enum IAMAccessAnalyzer {
   VALIDATE_POLICY = "ValidatePolicy",
 }
 
-export enum IAMIdentityCentersuccessortoSingleSignOn {
+export enum IamIdentityCenterSuccessorToSingleSignon {
   ASSOCIATE_DIRECTORY = "AssociateDirectory",
   ASSOCIATE_PROFILE = "AssociateProfile",
   ATTACH_CUSTOMER_MANAGED_POLICY_REFERENCE_TO_PERMISSION_SET = "AttachCustomerManagedPolicyReferenceToPermissionSet",
@@ -3455,7 +3455,7 @@ export enum IAMIdentityCentersuccessortoSingleSignOn {
   UPDATE_TRUST = "UpdateTrust",
 }
 
-export enum IAMIdentityCentersuccessortoSingleSignOndirectory {
+export enum IamIdentityCenterSuccessorToSingleSignonDirectory {
   ADD_MEMBER_TO_GROUP = "AddMemberToGroup",
   COMPLETE_VIRTUAL_MFA_DEVICE_REGISTRATION = "CompleteVirtualMfaDeviceRegistration",
   COMPLETE_WEB_AUTHN_DEVICE_REGISTRATION = "CompleteWebAuthnDeviceRegistration",
@@ -3510,7 +3510,7 @@ export enum IAMIdentityCentersuccessortoSingleSignOndirectory {
   VERIFY_EMAIL = "VerifyEmail",
 }
 
-export enum IQ {
+export enum Iq {
   ACCEPT_CALL = "AcceptCall",
   APPROVE_PAYMENT_REQUEST = "ApprovePaymentRequest",
   APPROVE_PROPOSAL = "ApproveProposal",
@@ -3570,7 +3570,7 @@ export enum IQ {
   WRITE_REVIEW = "WriteReview",
 }
 
-export enum IQPermissions {
+export enum IqPermissions {
   APPROVE_ACCESS_GRANT = "ApproveAccessGrant",
   APPROVE_PERMISSION_REQUEST = "ApprovePermissionRequest",
   CREATE_PERMISSION_REQUEST = "CreatePermissionRequest",
@@ -3624,7 +3624,7 @@ export enum IdentitySync {
   UPDATE_SYNC_TARGET = "UpdateSyncTarget",
 }
 
-export enum IdentityandAccessManagement {
+export enum IdentityAndAccessManagement {
   ADD_CLIENT_I_D_TO_OPEN_I_D_CONNECT_PROVIDER = "AddClientIDToOpenIDConnectProvider",
   ADD_ROLE_TO_INSTANCE_PROFILE = "AddRoleToInstanceProfile",
   ADD_USER_TO_GROUP = "AddUserToGroup",
@@ -3797,7 +3797,7 @@ export enum IdentityandAccessManagement {
   UPLOAD_SIGNING_CERTIFICATE = "UploadSigningCertificate",
 }
 
-export enum IdentityandAccessManagementRolesAnywhere {
+export enum IdentityAndAccessManagementRolesAnywhere {
   CREATE_PROFILE = "CreateProfile",
   CREATE_TRUST_ANCHOR = "CreateTrustAnchor",
   DELETE_CRL = "DeleteCrl",
@@ -3844,7 +3844,7 @@ export enum InvoicingService {
   PUT_INVOICE_EMAIL_DELIVERY_PREFERENCES = "PutInvoiceEmailDeliveryPreferences",
 }
 
-export enum IoT {
+export enum Iot {
   ACCEPT_CERTIFICATE_TRANSFER = "AcceptCertificateTransfer",
   ADD_THING_TO_BILLING_GROUP = "AddThingToBillingGroup",
   ADD_THING_TO_THING_GROUP = "AddThingToThingGroup",
@@ -4101,7 +4101,7 @@ export enum IoT {
   VALIDATE_SECURITY_PROFILE_BEHAVIORS = "ValidateSecurityProfileBehaviors",
 }
 
-export enum IoT1Click {
+export enum Iot1Click {
   ASSOCIATE_DEVICE_WITH_PLACEMENT = "AssociateDeviceWithPlacement",
   CLAIM_DEVICES_BY_CLAIM_CODE = "ClaimDevicesByClaimCode",
   CREATE_PLACEMENT = "CreatePlacement",
@@ -4130,7 +4130,7 @@ export enum IoT1Click {
   UPDATE_PROJECT = "UpdateProject",
 }
 
-export enum IoTAnalytics {
+export enum IotAnalytics {
   BATCH_PUT_MESSAGE = "BatchPutMessage",
   CANCEL_PIPELINE_REPROCESSING = "CancelPipelineReprocessing",
   CREATE_CHANNEL = "CreateChannel",
@@ -4167,7 +4167,7 @@ export enum IoTAnalytics {
   UPDATE_PIPELINE = "UpdatePipeline",
 }
 
-export enum IoTCoreDeviceAdvisor {
+export enum IotCoreDeviceAdvisor {
   CREATE_SUITE_DEFINITION = "CreateSuiteDefinition",
   DELETE_SUITE_DEFINITION = "DeleteSuiteDefinition",
   GET_ENDPOINT = "GetEndpoint",
@@ -4184,7 +4184,7 @@ export enum IoTCoreDeviceAdvisor {
   UPDATE_SUITE_DEFINITION = "UpdateSuiteDefinition",
 }
 
-export enum IoTDeviceTester {
+export enum IotDeviceTester {
   CHECK_VERSION = "CheckVersion",
   DOWNLOAD_TEST_SUITE = "DownloadTestSuite",
   LATEST_IDT = "LatestIdt",
@@ -4192,7 +4192,7 @@ export enum IoTDeviceTester {
   SUPPORTED_VERSION = "SupportedVersion",
 }
 
-export enum IoTEvents {
+export enum IotEvents {
   BATCH_ACKNOWLEDGE_ALARM = "BatchAcknowledgeAlarm",
   BATCH_DELETE_DETECTOR = "BatchDeleteDetector",
   BATCH_DISABLE_ALARM = "BatchDisableAlarm",
@@ -4234,7 +4234,7 @@ export enum IoTEvents {
   UPDATE_INPUT_ROUTING = "UpdateInputRouting",
 }
 
-export enum IoTFleetHubforDeviceManagement {
+export enum IotFleetHubForDeviceManagement {
   CREATE_APPLICATION = "CreateApplication",
   DELETE_APPLICATION = "DeleteApplication",
   DESCRIBE_APPLICATION = "DescribeApplication",
@@ -4245,7 +4245,7 @@ export enum IoTFleetHubforDeviceManagement {
   UPDATE_APPLICATION = "UpdateApplication",
 }
 
-export enum IoTFleetWise {
+export enum IotFleetwise {
   ASSOCIATE_VEHICLE_FLEET = "AssociateVehicleFleet",
   BATCH_CREATE_VEHICLE = "BatchCreateVehicle",
   BATCH_UPDATE_VEHICLE = "BatchUpdateVehicle",
@@ -4298,7 +4298,7 @@ export enum IoTFleetWise {
   UPDATE_VEHICLE = "UpdateVehicle",
 }
 
-export enum IoTGreengrass {
+export enum IotGreengrass {
   ASSOCIATE_ROLE_TO_GROUP = "AssociateRoleToGroup",
   ASSOCIATE_SERVICE_ROLE_TO_ACCOUNT = "AssociateServiceRoleToAccount",
   CREATE_CONNECTOR_DEFINITION = "CreateConnectorDefinition",
@@ -4394,7 +4394,7 @@ export enum IoTGreengrass {
   UPDATE_THING_RUNTIME_CONFIGURATION = "UpdateThingRuntimeConfiguration",
 }
 
-export enum IoTGreengrassV2 {
+export enum IotGreengrassV2 {
   ASSOCIATE_SERVICE_ROLE_TO_ACCOUNT = "AssociateServiceRoleToAccount",
   BATCH_ASSOCIATE_CLIENT_DEVICE_WITH_CORE_DEVICE = "BatchAssociateClientDeviceWithCoreDevice",
   BATCH_DISASSOCIATE_CLIENT_DEVICE_FROM_CORE_DEVICE = "BatchDisassociateClientDeviceFromCoreDevice",
@@ -4426,14 +4426,14 @@ export enum IoTGreengrassV2 {
   UPDATE_CONNECTIVITY_INFO = "UpdateConnectivityInfo",
 }
 
-export enum IoTJobsDataPlane {
+export enum IotJobsDataplane {
   DESCRIBE_JOB_EXECUTION = "DescribeJobExecution",
   GET_PENDING_JOB_EXECUTIONS = "GetPendingJobExecutions",
   START_NEXT_PENDING_JOB_EXECUTION = "StartNextPendingJobExecution",
   UPDATE_JOB_EXECUTION = "UpdateJobExecution",
 }
 
-export enum IoTRoboRunner {
+export enum IotRoborunner {
   CREATE_DESTINATION = "CreateDestination",
   CREATE_SITE = "CreateSite",
   CREATE_WORKER = "CreateWorker",
@@ -4456,7 +4456,7 @@ export enum IoTRoboRunner {
   UPDATE_WORKER_FLEET = "UpdateWorkerFleet",
 }
 
-export enum IoTSiteWise {
+export enum IotSitewise {
   ASSOCIATE_ASSETS = "AssociateAssets",
   ASSOCIATE_TIME_SERIES_TO_ASSET_PROPERTY = "AssociateTimeSeriesToAssetProperty",
   BATCH_ASSOCIATE_PROJECT_ASSETS = "BatchAssociateProjectAssets",
@@ -4533,7 +4533,7 @@ export enum IoTSiteWise {
   UPDATE_PROJECT = "UpdateProject",
 }
 
-export enum IoTTwinMaker {
+export enum IotTwinmaker {
   BATCH_PUT_PROPERTY_VALUES = "BatchPutPropertyValues",
   CREATE_COMPONENT_TYPE = "CreateComponentType",
   CREATE_ENTITY = "CreateEntity",
@@ -4570,7 +4570,7 @@ export enum IoTTwinMaker {
   UPDATE_WORKSPACE = "UpdateWorkspace",
 }
 
-export enum IoTWireless {
+export enum IotWireless {
   ASSOCIATE_AWS_ACCOUNT_WITH_PARTNER_ACCOUNT = "AssociateAwsAccountWithPartnerAccount",
   ASSOCIATE_MULTICAST_GROUP_WITH_FUOTA_TASK = "AssociateMulticastGroupWithFuotaTask",
   ASSOCIATE_WIRELESS_DEVICE_WITH_FUOTA_TASK = "AssociateWirelessDeviceWithFuotaTask",
@@ -5114,7 +5114,7 @@ export enum MarketplaceVendorInsights {
   UPDATE_SECURITY_PROFILE_SNAPSHOT_RELEASE_CONFIGURATION = "UpdateSecurityProfileSnapshotReleaseConfiguration",
 }
 
-export enum MicroserviceExtractorforNET {
+export enum MicroserviceExtractorForNet {
   GET_CONFIG = "GetConfig",
 }
 
@@ -5386,7 +5386,7 @@ export enum NetworkManager {
   UPDATE_VPC_ATTACHMENT = "UpdateVpcAttachment",
 }
 
-export enum OpsWorks {
+export enum Opsworks {
   ASSIGN_INSTANCE = "AssignInstance",
   ASSIGN_VOLUME = "AssignVolume",
   ASSOCIATE_ELASTIC_IP = "AssociateElasticIp",
@@ -5463,7 +5463,7 @@ export enum OpsWorks {
   UPDATE_VOLUME = "UpdateVolume",
 }
 
-export enum OpsWorksConfigurationManagement {
+export enum OpsworksConfigurationManagement {
   ASSOCIATE_NODE = "AssociateNode",
   CREATE_BACKUP = "CreateBackup",
   CREATE_SERVER = "CreateServer",
@@ -5859,7 +5859,7 @@ export enum ResilienceHubService {
   UPDATE_RESILIENCY_POLICY = "UpdateResiliencyPolicy",
 }
 
-export enum ResourceAccessManagerRAM {
+export enum ResourceAccessManagerRam {
   ACCEPT_RESOURCE_SHARE_INVITATION = "AcceptResourceShareInvitation",
   ASSOCIATE_RESOURCE_SHARE = "AssociateResourceShare",
   ASSOCIATE_RESOURCE_SHARE_PERMISSION = "AssociateResourceSharePermission",
@@ -5940,7 +5940,7 @@ export enum ResourceGroups {
   UPDATE_GROUP_QUERY = "UpdateGroupQuery",
 }
 
-export enum RoboMaker {
+export enum Robomaker {
   BATCH_DELETE_WORLDS = "BatchDeleteWorlds",
   BATCH_DESCRIBE_SIMULATION_JOB = "BatchDescribeSimulationJob",
   CANCEL_DEPLOYMENT_JOB = "CancelDeploymentJob",
@@ -6002,7 +6002,7 @@ export enum RoboMaker {
   UPDATE_WORLD_TEMPLATE = "UpdateWorldTemplate",
 }
 
-export enum SQLWorkbench {
+export enum SqlWorkbench {
   ASSOCIATE_CONNECTION_WITH_CHART = "AssociateConnectionWithChart",
   ASSOCIATE_CONNECTION_WITH_TAB = "AssociateConnectionWithTab",
   ASSOCIATE_NOTEBOOK_WITH_TAB = "AssociateNotebookWithTab",
@@ -6431,7 +6431,7 @@ export enum Signer {
   UNTAG_RESOURCE = "UntagResource",
 }
 
-export enum SimSpaceWeaver {
+export enum SimspaceWeaver {
   CREATE_SNAPSHOT = "CreateSnapshot",
   DELETE_APP = "DeleteApp",
   DELETE_SIMULATION = "DeleteSimulation",
@@ -6659,7 +6659,7 @@ export enum Support {
   SEARCH_FOR_CASES = "SearchForCases",
 }
 
-export enum SupportAppinSlack {
+export enum SupportAppInSlack {
   CREATE_SLACK_CHANNEL_CONFIGURATION = "CreateSlackChannelConfiguration",
   DELETE_ACCOUNT_ALIAS = "DeleteAccountAlias",
   DELETE_SLACK_CHANNEL_CONFIGURATION = "DeleteSlackChannelConfiguration",
@@ -6837,7 +6837,7 @@ export enum SystemsManager {
   UPDATE_SERVICE_SETTING = "UpdateServiceSetting",
 }
 
-export enum SystemsManagerGUIConnect {
+export enum SystemsManagerGuiConnect {
   CANCEL_CONNECTION = "CancelConnection",
   GET_CONNECTION = "GetConnection",
   START_CONNECTION = "StartConnection",
@@ -6918,7 +6918,7 @@ export enum SystemsManagerIncidentManagerContacts {
   UPDATE_ROTATION = "UpdateRotation",
 }
 
-export enum SystemsManagerforSAP {
+export enum SystemsManagerForSap {
   BACKUP_DATABASE = "BackupDatabase",
   DELETE_RESOURCE_PERMISSION = "DeleteResourcePermission",
   DEREGISTER_APPLICATION = "DeregisterApplication",
@@ -7150,7 +7150,7 @@ export enum VerifiedAccess {
   ALLOW_VERIFIED_ACCESS = "AllowVerifiedAccess",
 }
 
-export enum WAF {
+export enum Waf {
   CREATE_BYTE_MATCH_SET = "CreateByteMatchSet",
   CREATE_GEO_MATCH_SET = "CreateGeoMatchSet",
   CREATE_I_P_SET = "CreateIPSet",
@@ -7230,7 +7230,7 @@ export enum WAF {
   UPDATE_XSS_MATCH_SET = "UpdateXssMatchSet",
 }
 
-export enum WAFRegional {
+export enum WafRegional {
   ASSOCIATE_WEB_A_C_L = "AssociateWebACL",
   CREATE_BYTE_MATCH_SET = "CreateByteMatchSet",
   CREATE_GEO_MATCH_SET = "CreateGeoMatchSet",
@@ -7314,7 +7314,7 @@ export enum WAFRegional {
   UPDATE_XSS_MATCH_SET = "UpdateXssMatchSet",
 }
 
-export enum WAFV2 {
+export enum WafV2 {
   ASSOCIATE_WEB_A_C_L = "AssociateWebACL",
   CHECK_CAPACITY = "CheckCapacity",
   CREATE_A_P_I_KEY = "CreateAPIKey",
@@ -7370,7 +7370,7 @@ export enum WAFV2 {
   UPDATE_WEB_A_C_L = "UpdateWebACL",
 }
 
-export enum WellArchitectedTool {
+export enum WellarchitectedTool {
   ASSOCIATE_LENSES = "AssociateLenses",
   CREATE_LENS_SHARE = "CreateLensShare",
   CREATE_LENS_VERSION = "CreateLensVersion",
@@ -7426,7 +7426,7 @@ export enum Wickr {
   UPDATE_NETWORK_DETAILS = "UpdateNetworkDetails",
 }
 
-export enum XRay {
+export enum Xray {
   BATCH_GET_TRACE_SUMMARY_BY_ID = "BatchGetTraceSummaryById",
   BATCH_GET_TRACES = "BatchGetTraces",
   CREATE_GROUP = "CreateGroup",
@@ -7462,7 +7462,7 @@ export enum XRay {
   UPDATE_SAMPLING_RULE = "UpdateSamplingRule",
 }
 
-export enum serviceprovidingmanagedprivatenetworks {
+export enum ServiceProvidingManagedPrivateNetworks {
   ACKNOWLEDGE_ORDER_RECEIPT = "AcknowledgeOrderReceipt",
   ACTIVATE_DEVICE_IDENTIFIER = "ActivateDeviceIdentifier",
   ACTIVATE_NETWORK_SITE = "ActivateNetworkSite",
@@ -7491,7 +7491,7 @@ export enum serviceprovidingmanagedprivatenetworks {
   UPDATE_NETWORK_SITE_PLAN = "UpdateNetworkSitePlan",
 }
 
-export enum AlexaforBusiness {
+export enum AlexaForBusiness {
   APPROVE_SKILL = "ApproveSkill",
   ASSOCIATE_CONTACT_WITH_ADDRESS_BOOK = "AssociateContactWithAddressBook",
   ASSOCIATE_DEVICE_WITH_NETWORK_PROFILE = "AssociateDeviceWithNetworkProfile",
@@ -7590,13 +7590,13 @@ export enum AlexaforBusiness {
   UPDATE_SKILL_GROUP = "UpdateSkillGroup",
 }
 
-export enum APIGateway {
+export enum ApiGateway {
   INVALIDATE_CACHE = "InvalidateCache",
   INVOKE = "Invoke",
   MANAGE_CONNECTIONS = "ManageConnections",
 }
 
-export enum APIGatewayManagement {
+export enum ApiGatewayManagement {
   ADD_CERTIFICATE_TO_DOMAIN = "AddCertificateToDomain",
   D_E_L_E_T_E = "DELETE",
   G_E_T = "GET",
@@ -7608,7 +7608,7 @@ export enum APIGatewayManagement {
   UPDATE_REST_API_POLICY = "UpdateRestApiPolicy",
 }
 
-export enum APIGatewayManagementV2 {
+export enum ApiGatewayManagementV2 {
   D_E_L_E_T_E = "DELETE",
   G_E_T = "GET",
   P_A_T_C_H = "PATCH",
@@ -7616,7 +7616,7 @@ export enum APIGatewayManagementV2 {
   P_U_T = "PUT",
 }
 
-export enum AppFlow {
+export enum Appflow {
   CANCEL_FLOW_EXECUTIONS = "CancelFlowExecutions",
   CREATE_CONNECTOR_PROFILE = "CreateConnectorProfile",
   CREATE_FLOW = "CreateFlow",
@@ -7649,7 +7649,7 @@ export enum AppFlow {
   USE_CONNECTOR_PROFILE = "UseConnectorProfile",
 }
 
-export enum AppIntegrations {
+export enum Appintegrations {
   CREATE_DATA_INTEGRATION = "CreateDataIntegration",
   CREATE_DATA_INTEGRATION_ASSOCIATION = "CreateDataIntegrationAssociation",
   CREATE_EVENT_INTEGRATION = "CreateEventIntegration",
@@ -7671,7 +7671,7 @@ export enum AppIntegrations {
   UPDATE_EVENT_INTEGRATION = "UpdateEventIntegration",
 }
 
-export enum AppStream20 {
+export enum Appstream20 {
   ASSOCIATE_APPLICATION_FLEET = "AssociateApplicationFleet",
   ASSOCIATE_APPLICATION_TO_ENTITLEMENT = "AssociateApplicationToEntitlement",
   ASSOCIATE_FLEET = "AssociateFleet",
@@ -8203,7 +8203,7 @@ export enum CloudDirectory {
   UPGRADE_PUBLISHED_SCHEMA = "UpgradePublishedSchema",
 }
 
-export enum CloudFront {
+export enum Cloudfront {
   ASSOCIATE_ALIAS = "AssociateAlias",
   COPY_DISTRIBUTION = "CopyDistribution",
   CREATE_CACHE_POLICY = "CreateCachePolicy",
@@ -8318,7 +8318,7 @@ export enum CloudFront {
   UPDATE_STREAMING_DISTRIBUTION = "UpdateStreamingDistribution",
 }
 
-export enum CloudSearch {
+export enum Cloudsearch {
   ADD_TAGS = "AddTags",
   BUILD_SUGGESTERS = "BuildSuggesters",
   CREATE_DOMAIN = "CreateDomain",
@@ -8353,7 +8353,7 @@ export enum CloudSearch {
   UGGEST = "suggest",
 }
 
-export enum CloudWatch {
+export enum Cloudwatch {
   DELETE_ALARMS = "DeleteAlarms",
   DELETE_ANOMALY_DETECTOR = "DeleteAnomalyDetector",
   DELETE_DASHBOARDS = "DeleteDashboards",
@@ -8395,7 +8395,7 @@ export enum CloudWatch {
   UNTAG_RESOURCE = "UntagResource",
 }
 
-export enum CloudWatchApplicationInsights {
+export enum CloudwatchApplicationInsights {
   CREATE_APPLICATION = "CreateApplication",
   CREATE_COMPONENT = "CreateComponent",
   CREATE_LOG_PATTERN = "CreateLogPattern",
@@ -8426,7 +8426,7 @@ export enum CloudWatchApplicationInsights {
   UPDATE_LOG_PATTERN = "UpdateLogPattern",
 }
 
-export enum CloudWatchEvidently {
+export enum CloudwatchEvidently {
   BATCH_EVALUATE_FEATURE = "BatchEvaluateFeature",
   CREATE_EXPERIMENT = "CreateExperiment",
   CREATE_FEATURE = "CreateFeature",
@@ -8467,7 +8467,7 @@ export enum CloudWatchEvidently {
   UPDATE_PROJECT_DATA_DELIVERY = "UpdateProjectDataDelivery",
 }
 
-export enum CloudWatchInternetMonitor {
+export enum CloudwatchInternetMonitor {
   CREATE_MONITOR = "CreateMonitor",
   DELETE_MONITOR = "DeleteMonitor",
   GET_HEALTH_EVENT = "GetHealthEvent",
@@ -8480,7 +8480,7 @@ export enum CloudWatchInternetMonitor {
   UPDATE_MONITOR = "UpdateMonitor",
 }
 
-export enum CloudWatchLogs {
+export enum CloudwatchLogs {
   ASSOCIATE_KMS_KEY = "AssociateKmsKey",
   CANCEL_EXPORT_TASK = "CancelExportTask",
   CREATE_EXPORT_TASK = "CreateExportTask",
@@ -8538,7 +8538,7 @@ export enum CloudWatchLogs {
   UPDATE_LOG_DELIVERY = "UpdateLogDelivery",
 }
 
-export enum CloudWatchObservabilityAccessManager {
+export enum CloudwatchObservabilityAccessManager {
   CREATE_LINK = "CreateLink",
   CREATE_SINK = "CreateSink",
   DELETE_LINK = "DeleteLink",
@@ -8556,7 +8556,7 @@ export enum CloudWatchObservabilityAccessManager {
   UPDATE_LINK = "UpdateLink",
 }
 
-export enum CloudWatchSynthetics {
+export enum CloudwatchSynthetics {
   ASSOCIATE_RESOURCE = "AssociateResource",
   CREATE_CANARY = "CreateCanary",
   CREATE_GROUP = "CreateGroup",
@@ -8580,7 +8580,7 @@ export enum CloudWatchSynthetics {
   UPDATE_CANARY = "UpdateCanary",
 }
 
-export enum CodeCatalyst {
+export enum Codecatalyst {
   ACCEPT_CONNECTION = "AcceptConnection",
   ASSOCIATE_IAM_ROLE_TO_CONNECTION = "AssociateIamRoleToConnection",
   DELETE_CONNECTION = "DeleteConnection",
@@ -8597,11 +8597,11 @@ export enum CodeCatalyst {
   UNTAG_RESOURCE = "UntagResource",
 }
 
-export enum CodeGuru {
+export enum Codeguru {
   GET_CODE_GURU_FREE_TRIAL_SUMMARY = "GetCodeGuruFreeTrialSummary",
 }
 
-export enum CodeGuruProfiler {
+export enum CodeguruProfiler {
   ADD_NOTIFICATION_CHANNELS = "AddNotificationChannels",
   BATCH_GET_FRAME_METRIC_DATA = "BatchGetFrameMetricData",
   CONFIGURE_AGENT = "ConfigureAgent",
@@ -8627,7 +8627,7 @@ export enum CodeGuruProfiler {
   UPDATE_PROFILING_GROUP = "UpdateProfilingGroup",
 }
 
-export enum CodeGuruReviewer {
+export enum CodeguruReviewer {
   ASSOCIATE_REPOSITORY = "AssociateRepository",
   CREATE_CODE_REVIEW = "CreateCodeReview",
   CREATE_CONNECTION_TOKEN = "CreateConnectionToken",
@@ -8647,7 +8647,7 @@ export enum CodeGuruReviewer {
   UN_TAG_RESOURCE = "UnTagResource",
 }
 
-export enum CodeGuruSecurity {
+export enum CodeguruSecurity {
   BATCH_GET_FINDINGS = "BatchGetFindings",
   CREATE_SCAN = "CreateScan",
   CREATE_UPLOAD_URL = "CreateUploadUrl",
@@ -8660,7 +8660,7 @@ export enum CodeGuruSecurity {
   UPDATE_ACCOUNT_CONFIGURATION = "UpdateAccountConfiguration",
 }
 
-export enum CodeWhisperer {
+export enum Codewhisperer {
   CREATE_PROFILE = "CreateProfile",
   DELETE_PROFILE = "DeleteProfile",
   GENERATE_RECOMMENDATIONS = "GenerateRecommendations",
@@ -9218,7 +9218,7 @@ export enum ConnectCustomerProfiles {
   UPDATE_PROFILE = "UpdateProfile",
 }
 
-export enum ConnectVoiceID {
+export enum ConnectVoiceId {
   ASSOCIATE_FRAUDSTER = "AssociateFraudster",
   CREATE_DOMAIN = "CreateDomain",
   CREATE_WATCHLIST = "CreateWatchlist",
@@ -9297,7 +9297,7 @@ export enum DataLifecycleManager {
   UPDATE_LIFECYCLE_POLICY = "UpdateLifecyclePolicy",
 }
 
-export enum DataZone {
+export enum Datazone {
   GET_PROJECT = "GetProject",
   GET_PROJECT_CONFIGURATION = "GetProjectConfiguration",
   GET_PROJECT_CREDENTIALS = "GetProjectCredentials",
@@ -9305,7 +9305,7 @@ export enum DataZone {
   LIST_USER_PROJECTS = "ListUserProjects",
 }
 
-export enum DataZoneControl {
+export enum DatazoneControl {
   CREATE_ACCOUNT_ASSOCIATION_INVITATION = "CreateAccountAssociationInvitation",
   CREATE_DATA_SOURCE = "CreateDataSource",
   CREATE_ENVIRONMENT = "CreateEnvironment",
@@ -9370,7 +9370,7 @@ export enum Detective {
   UPDATE_ORGANIZATION_CONFIGURATION = "UpdateOrganizationConfiguration",
 }
 
-export enum DevOpsGuru {
+export enum DevopsGuru {
   ADD_NOTIFICATION_CHANNEL = "AddNotificationChannel",
   DELETE_INSIGHT = "DeleteInsight",
   DESCRIBE_ACCOUNT_HEALTH = "DescribeAccountHealth",
@@ -9404,7 +9404,7 @@ export enum DevOpsGuru {
   UPDATE_SERVICE_INTEGRATION = "UpdateServiceIntegration",
 }
 
-export enum DocumentDBElasticClusters {
+export enum DocumentdbElasticClusters {
   CREATE_CLUSTER = "CreateCluster",
   CREATE_CLUSTER_SNAPSHOT = "CreateClusterSnapshot",
   DELETE_CLUSTER = "DeleteCluster",
@@ -9420,7 +9420,7 @@ export enum DocumentDBElasticClusters {
   UPDATE_CLUSTER = "UpdateCluster",
 }
 
-export enum DynamoDB {
+export enum Dynamodb {
   BATCH_GET_ITEM = "BatchGetItem",
   BATCH_WRITE_ITEM = "BatchWriteItem",
   CONDITION_CHECK_ITEM = "ConditionCheckItem",
@@ -9488,7 +9488,7 @@ export enum DynamoDB {
   UPDATE_TIME_TO_LIVE = "UpdateTimeToLive",
 }
 
-export enum DynamoDBAcceleratorDAX {
+export enum DynamodbAcceleratorDax {
   BATCH_GET_ITEM = "BatchGetItem",
   BATCH_WRITE_ITEM = "BatchWriteItem",
   CONDITION_CHECK_ITEM = "ConditionCheckItem",
@@ -9521,7 +9521,7 @@ export enum DynamoDBAcceleratorDAX {
   UPDATE_SUBNET_GROUP = "UpdateSubnetGroup",
 }
 
-export enum EC2 {
+export enum Ec2 {
   ACCEPT_ADDRESS_TRANSFER = "AcceptAddressTransfer",
   ACCEPT_RESERVED_INSTANCES_EXCHANGE_QUOTE = "AcceptReservedInstancesExchangeQuote",
   ACCEPT_TRANSIT_GATEWAY_MULTICAST_DOMAIN_ASSOCIATIONS = "AcceptTransitGatewayMulticastDomainAssociations",
@@ -10130,7 +10130,7 @@ export enum EC2 {
   WITHDRAW_BYOIP_CIDR = "WithdrawByoipCidr",
 }
 
-export enum EC2AutoScaling {
+export enum Ec2AutoScaling {
   ATTACH_INSTANCES = "AttachInstances",
   ATTACH_LOAD_BALANCER_TARGET_GROUPS = "AttachLoadBalancerTargetGroups",
   ATTACH_LOAD_BALANCERS = "AttachLoadBalancers",
@@ -10198,7 +10198,7 @@ export enum EC2AutoScaling {
   UPDATE_AUTO_SCALING_GROUP = "UpdateAutoScalingGroup",
 }
 
-export enum EC2ImageBuilder {
+export enum Ec2ImageBuilder {
   CANCEL_IMAGE_CREATION = "CancelImageCreation",
   CREATE_COMPONENT = "CreateComponent",
   CREATE_CONTAINER_RECIPE = "CreateContainerRecipe",
@@ -10257,12 +10257,12 @@ export enum EC2ImageBuilder {
   UPDATE_INFRASTRUCTURE_CONFIGURATION = "UpdateInfrastructureConfiguration",
 }
 
-export enum EC2InstanceConnect {
+export enum Ec2InstanceConnect {
   SEND_S_S_H_PUBLIC_KEY = "SendSSHPublicKey",
   SEND_SERIAL_CONSOLE_S_S_H_PUBLIC_KEY = "SendSerialConsoleSSHPublicKey",
 }
 
-export enum EMRServerless {
+export enum EmrServerless {
   CANCEL_JOB_RUN = "CancelJobRun",
   CREATE_APPLICATION = "CreateApplication",
   DELETE_APPLICATION = "DeleteApplication",
@@ -10280,7 +10280,7 @@ export enum EMRServerless {
   UPDATE_APPLICATION = "UpdateApplication",
 }
 
-export enum EMRonEKSEMRContainers {
+export enum EmrOnEksEmrContainers {
   CANCEL_JOB_RUN = "CancelJobRun",
   CREATE_JOB_TEMPLATE = "CreateJobTemplate",
   CREATE_MANAGED_ENDPOINT = "CreateManagedEndpoint",
@@ -10303,7 +10303,7 @@ export enum EMRonEKSEMRContainers {
   UNTAG_RESOURCE = "UntagResource",
 }
 
-export enum ElastiCache {
+export enum Elasticache {
   ADD_TAGS_TO_RESOURCE = "AddTagsToResource",
   AUTHORIZE_CACHE_SECURITY_GROUP_INGRESS = "AuthorizeCacheSecurityGroupIngress",
   BATCH_APPLY_UPDATE_ACTION = "BatchApplyUpdateAction",
@@ -10601,7 +10601,7 @@ export enum ElasticKubernetesService {
   UPDATE_NODEGROUP_VERSION = "UpdateNodegroupVersion",
 }
 
-export enum ElasticMapReduce {
+export enum ElasticMapreduce {
   ADD_INSTANCE_FLEET = "AddInstanceFleet",
   ADD_INSTANCE_GROUPS = "AddInstanceGroups",
   ADD_JOB_FLOW_STEPS = "AddJobFlowSteps",
@@ -10703,7 +10703,7 @@ export enum ElasticTranscoder {
   UPDATE_PIPELINE_STATUS = "UpdatePipelineStatus",
 }
 
-export enum EventBridge {
+export enum Eventbridge {
   ACTIVATE_EVENT_SOURCE = "ActivateEventSource",
   CANCEL_REPLAY = "CancelReplay",
   CREATE_API_DESTINATION = "CreateApiDestination",
@@ -10763,7 +10763,7 @@ export enum EventBridge {
   UPDATE_ENDPOINT = "UpdateEndpoint",
 }
 
-export enum EventBridgePipes {
+export enum EventbridgePipes {
   CREATE_PIPE = "CreatePipe",
   DELETE_PIPE = "DeletePipe",
   DESCRIBE_PIPE = "DescribePipe",
@@ -10776,7 +10776,7 @@ export enum EventBridgePipes {
   UPDATE_PIPE = "UpdatePipe",
 }
 
-export enum EventBridgeScheduler {
+export enum EventbridgeScheduler {
   CREATE_SCHEDULE = "CreateSchedule",
   CREATE_SCHEDULE_GROUP = "CreateScheduleGroup",
   DELETE_SCHEDULE = "DeleteSchedule",
@@ -10791,7 +10791,7 @@ export enum EventBridgeScheduler {
   UPDATE_SCHEDULE = "UpdateSchedule",
 }
 
-export enum EventBridgeSchemas {
+export enum EventbridgeSchemas {
   CREATE_DISCOVERER = "CreateDiscoverer",
   CREATE_REGISTRY = "CreateRegistry",
   CREATE_SCHEMA = "CreateSchema",
@@ -10825,7 +10825,7 @@ export enum EventBridgeSchemas {
   UPDATE_SCHEMA = "UpdateSchema",
 }
 
-export enum FSx {
+export enum Fsx {
   ASSOCIATE_FILE_GATEWAY = "AssociateFileGateway",
   ASSOCIATE_FILE_SYSTEM_ALIASES = "AssociateFileSystemAliases",
   CANCEL_DATA_REPOSITORY_TASK = "CancelDataRepositoryTask",
@@ -10873,7 +10873,7 @@ export enum FSx {
   UPDATE_VOLUME = "UpdateVolume",
 }
 
-export enum FinSpace {
+export enum Finspace {
   CREATE_ENVIRONMENT = "CreateEnvironment",
   CREATE_USER = "CreateUser",
   DELETE_ENVIRONMENT = "DeleteEnvironment",
@@ -10891,7 +10891,7 @@ export enum FinSpace {
   UPDATE_USER = "UpdateUser",
 }
 
-export enum FinSpaceAPI {
+export enum FinspaceApi {
   GET_PROGRAMMATIC_ACCESS_CREDENTIALS = "GetProgrammaticAccessCredentials",
 }
 
@@ -11045,7 +11045,7 @@ export enum FraudDetector {
   UPDATE_VARIABLE = "UpdateVariable",
 }
 
-export enum FreeRTOS {
+export enum Freertos {
   CREATE_SOFTWARE_CONFIGURATION = "CreateSoftwareConfiguration",
   CREATE_SUBSCRIPTION = "CreateSubscription",
   DELETE_SOFTWARE_CONFIGURATION = "DeleteSoftwareConfiguration",
@@ -11068,7 +11068,7 @@ export enum FreeRTOS {
   VERIFY_EMAIL = "VerifyEmail",
 }
 
-export enum GameLift {
+export enum Gamelift {
   ACCEPT_MATCH = "AcceptMatch",
   CLAIM_GAME_SERVER = "ClaimGameServer",
   CREATE_ALIAS = "CreateAlias",
@@ -11175,7 +11175,7 @@ export enum GameLift {
   VALIDATE_MATCHMAKING_RULE_SET = "ValidateMatchmakingRuleSet",
 }
 
-export enum GameSparks {
+export enum Gamesparks {
   CREATE_GAME = "CreateGame",
   CREATE_SNAPSHOT = "CreateSnapshot",
   CREATE_STAGE = "CreateStage",
@@ -11212,7 +11212,7 @@ export enum GameSparks {
   UPDATE_STAGE = "UpdateStage",
 }
 
-export enum GroundTruthLabeling {
+export enum GroundtruthLabeling {
   ASSOCIATE_PATCH_TO_MANIFEST_JOB = "AssociatePatchToManifestJob",
   DESCRIBE_CONSOLE_JOB = "DescribeConsoleJob",
   LIST_DATASET_OBJECTS = "ListDatasetObjects",
@@ -11220,7 +11220,7 @@ export enum GroundTruthLabeling {
   RUN_GENERATE_MANIFEST_BY_CRAWLING_JOB = "RunGenerateManifestByCrawlingJob",
 }
 
-export enum GuardDuty {
+export enum Guardduty {
   ACCEPT_ADMINISTRATOR_INVITATION = "AcceptAdministratorInvitation",
   ACCEPT_INVITATION = "AcceptInvitation",
   ARCHIVE_FINDINGS = "ArchiveFindings",
@@ -11292,7 +11292,7 @@ export enum GuardDuty {
   UPDATE_THREAT_INTEL_SET = "UpdateThreatIntelSet",
 }
 
-export enum HealthLake {
+export enum Healthlake {
   CREATE_F_H_I_R_DATASTORE = "CreateFHIRDatastore",
   CREATE_RESOURCE = "CreateResource",
   DELETE_F_H_I_R_DATASTORE = "DeleteFHIRDatastore",
@@ -11568,7 +11568,7 @@ export enum KendraIntelligentRanking {
   UPDATE_RESCORE_EXECUTION_PLAN = "UpdateRescoreExecutionPlan",
 }
 
-export enum KeyspacesforApacheCassandra {
+export enum KeyspacesForApacheCassandra {
   ALTER = "Alter",
   ALTER_MULTI_REGION_RESOURCE = "AlterMultiRegionResource",
   CREATE = "Create",
@@ -12091,7 +12091,7 @@ export enum Location {
   UPDATE_TRACKER = "UpdateTracker",
 }
 
-export enum LookoutforEquipment {
+export enum LookoutForEquipment {
   CREATE_DATASET = "CreateDataset",
   CREATE_INFERENCE_SCHEDULER = "CreateInferenceScheduler",
   CREATE_LABEL = "CreateLabel",
@@ -12127,7 +12127,7 @@ export enum LookoutforEquipment {
   UPDATE_LABEL_GROUP = "UpdateLabelGroup",
 }
 
-export enum LookoutforMetrics {
+export enum LookoutForMetrics {
   ACTIVATE_ANOMALY_DETECTOR = "ActivateAnomalyDetector",
   BACK_TEST_ANOMALY_DETECTOR = "BackTestAnomalyDetector",
   CREATE_ALERT = "CreateAlert",
@@ -12160,7 +12160,7 @@ export enum LookoutforMetrics {
   UPDATE_METRIC_SET = "UpdateMetricSet",
 }
 
-export enum LookoutforVision {
+export enum LookoutForVision {
   CREATE_DATASET = "CreateDataset",
   CREATE_MODEL = "CreateModel",
   CREATE_PROJECT = "CreateProject",
@@ -12188,7 +12188,7 @@ export enum LookoutforVision {
   UPDATE_DATASET_ENTRIES = "UpdateDatasetEntries",
 }
 
-export enum MQ {
+export enum Mq {
   CREATE_BROKER = "CreateBroker",
   CREATE_CONFIGURATION = "CreateConfiguration",
   CREATE_REPLICA_BROKER = "CreateReplicaBroker",
@@ -12381,7 +12381,7 @@ export enum ManagedGrafana {
   UPDATE_WORKSPACE_CONFIGURATION = "UpdateWorkspaceConfiguration",
 }
 
-export enum ManagedServiceforPrometheus {
+export enum ManagedServiceForPrometheus {
   CREATE_ALERT_MANAGER_ALERTS = "CreateAlertManagerAlerts",
   CREATE_ALERT_MANAGER_DEFINITION = "CreateAlertManagerDefinition",
   CREATE_LOGGING_CONFIGURATION = "CreateLoggingConfiguration",
@@ -12421,7 +12421,7 @@ export enum ManagedServiceforPrometheus {
   UPDATE_WORKSPACE_ALIAS = "UpdateWorkspaceAlias",
 }
 
-export enum ManagedStreamingforApacheKafka {
+export enum ManagedStreamingForApacheKafka {
   BATCH_ASSOCIATE_SCRAM_SECRET = "BatchAssociateScramSecret",
   BATCH_DISASSOCIATE_SCRAM_SECRET = "BatchDisassociateScramSecret",
   CREATE_CLUSTER = "CreateCluster",
@@ -12469,7 +12469,7 @@ export enum ManagedStreamingforApacheKafka {
   UPDATE_STORAGE = "UpdateStorage",
 }
 
-export enum ManagedStreamingforKafkaConnect {
+export enum ManagedStreamingForKafkaConnect {
   CREATE_CONNECTOR = "CreateConnector",
   CREATE_CUSTOM_PLUGIN = "CreateCustomPlugin",
   CREATE_WORKER_CONFIGURATION = "CreateWorkerConfiguration",
@@ -12484,7 +12484,7 @@ export enum ManagedStreamingforKafkaConnect {
   UPDATE_CONNECTOR = "UpdateConnector",
 }
 
-export enum ManagedWorkflowsforApacheAirflow {
+export enum ManagedWorkflowsForApacheAirflow {
   CREATE_CLI_TOKEN = "CreateCliToken",
   CREATE_ENVIRONMENT = "CreateEnvironment",
   CREATE_WEB_LOGIN_TOKEN = "CreateWebLoginToken",
@@ -12540,7 +12540,7 @@ export enum MechanicalTurk {
   UPDATE_QUALIFICATION_TYPE = "UpdateQualificationType",
 }
 
-export enum MemoryDB {
+export enum Memorydb {
   BATCH_UPDATE_CLUSTER = "BatchUpdateCluster",
   CONNECT = "Connect",
   COPY_SNAPSHOT = "CopySnapshot",
@@ -12777,7 +12777,7 @@ export enum Omics {
   UPLOAD_READ_SET_PART = "UploadReadSetPart",
 }
 
-export enum OpenSearchIngestion {
+export enum OpensearchIngestion {
   CREATE_PIPELINE = "CreatePipeline",
   DELETE_PIPELINE = "DeletePipeline",
   GET_PIPELINE = "GetPipeline",
@@ -12795,7 +12795,7 @@ export enum OpenSearchIngestion {
   VALIDATE_PIPELINE = "ValidatePipeline",
 }
 
-export enum OpenSearchServerless {
+export enum OpensearchServerless {
   A_P_I_ACCESS_ALL = "APIAccessAll",
   BATCH_GET_COLLECTION = "BatchGetCollection",
   BATCH_GET_VPC_ENDPOINT = "BatchGetVpcEndpoint",
@@ -12831,7 +12831,7 @@ export enum OpenSearchServerless {
   UPDATE_VPC_ENDPOINT = "UpdateVpcEndpoint",
 }
 
-export enum OpenSearchService {
+export enum OpensearchService {
   ACCEPT_INBOUND_CONNECTION = "AcceptInboundConnection",
   ACCEPT_INBOUND_CROSS_CLUSTER_SEARCH_CONNECTION = "AcceptInboundCrossClusterSearchConnection",
   ADD_TAGS = "AddTags",
@@ -13167,7 +13167,7 @@ export enum PinpointEmailService {
   UPDATE_CONFIGURATION_SET_EVENT_DESTINATION = "UpdateConfigurationSetEventDestination",
 }
 
-export enum PinpointSMSVoiceV2 {
+export enum PinpointSmsVoiceV2 {
   ASSOCIATE_ORIGINATION_IDENTITY = "AssociateOriginationIdentity",
   CREATE_CONFIGURATION_SET = "CreateConfigurationSet",
   CREATE_EVENT_DESTINATION = "CreateEventDestination",
@@ -13213,7 +13213,7 @@ export enum PinpointSMSVoiceV2 {
   UPDATE_POOL = "UpdatePool",
 }
 
-export enum PinpointSMSandVoiceService {
+export enum PinpointSmsAndVoiceService {
   CREATE_CONFIGURATION_SET = "CreateConfigurationSet",
   CREATE_CONFIGURATION_SET_EVENT_DESTINATION = "CreateConfigurationSetEventDestination",
   DELETE_CONFIGURATION_SET = "DeleteConfigurationSet",
@@ -13236,7 +13236,7 @@ export enum Polly {
   SYNTHESIZE_SPEECH = "SynthesizeSpeech",
 }
 
-export enum QLDB {
+export enum Qldb {
   CANCEL_JOURNAL_KINESIS_STREAM = "CancelJournalKinesisStream",
   CREATE_LEDGER = "CreateLedger",
   DELETE_LEDGER = "DeleteLedger",
@@ -13274,7 +13274,7 @@ export enum QLDB {
   UPDATE_LEDGER_PERMISSIONS_MODE = "UpdateLedgerPermissionsMode",
 }
 
-export enum QuickSight {
+export enum Quicksight {
   ACCOUNT_CONFIGURATIONS = "AccountConfigurations",
   CANCEL_INGESTION = "CancelIngestion",
   CREATE_ACCOUNT_CUSTOMIZATION = "CreateAccountCustomization",
@@ -13456,7 +13456,7 @@ export enum QuickSight {
   UPDATE_V_P_C_CONNECTION = "UpdateVPCConnection",
 }
 
-export enum RDS {
+export enum Rds {
   ADD_ROLE_TO_D_B_CLUSTER = "AddRoleToDBCluster",
   ADD_ROLE_TO_D_B_INSTANCE = "AddRoleToDBInstance",
   ADD_SOURCE_IDENTIFIER_TO_SUBSCRIPTION = "AddSourceIdentifierToSubscription",
@@ -13605,7 +13605,7 @@ export enum RDS {
   SWITCHOVER_READ_REPLICA = "SwitchoverReadReplica",
 }
 
-export enum RDSDataAPI {
+export enum RdsDataApi {
   BATCH_EXECUTE_STATEMENT = "BatchExecuteStatement",
   BEGIN_TRANSACTION = "BeginTransaction",
   COMMIT_TRANSACTION = "CommitTransaction",
@@ -13614,11 +13614,11 @@ export enum RDSDataAPI {
   ROLLBACK_TRANSACTION = "RollbackTransaction",
 }
 
-export enum RDSIAMAuthentication {
+export enum RdsIamAuthentication {
   ONNECT = "connect",
 }
 
-export enum RHELKnowledgebasePortal {
+export enum RhelKnowledgebasePortal {
   GET_RHEL_U_R_L = "GetRhelURL",
 }
 
@@ -13762,7 +13762,7 @@ export enum Redshift {
   VIEW_QUERIES_IN_CONSOLE = "ViewQueriesInConsole",
 }
 
-export enum RedshiftDataAPI {
+export enum RedshiftDataApi {
   BATCH_EXECUTE_STATEMENT = "BatchExecuteStatement",
   CANCEL_STATEMENT = "CancelStatement",
   DESCRIBE_STATEMENT = "DescribeStatement",
@@ -13887,7 +13887,7 @@ export enum Rekognition {
   UPDATE_STREAM_PROCESSOR = "UpdateStreamProcessor",
 }
 
-export enum ResourceGroupTaggingAPI {
+export enum ResourceGroupTaggingApi {
   DESCRIBE_REPORT_CREATION = "DescribeReportCreation",
   GET_COMPLIANCE_SUMMARY = "GetComplianceSummary",
   GET_RESOURCES = "GetResources",
@@ -14350,7 +14350,7 @@ export enum S3ObjectLambda {
   WRITE_GET_OBJECT_RESPONSE = "WriteGetObjectResponse",
 }
 
-export enum S3onOutposts {
+export enum S3OnOutposts {
   ABORT_MULTIPART_UPLOAD = "AbortMultipartUpload",
   CREATE_ACCESS_POINT = "CreateAccessPoint",
   CREATE_BUCKET = "CreateBucket",
@@ -14401,7 +14401,7 @@ export enum S3onOutposts {
   REPLICATE_TAGS = "ReplicateTags",
 }
 
-export enum SES {
+export enum Ses {
   CLONE_RECEIPT_RULE_SET = "CloneReceiptRuleSet",
   CREATE_CONFIGURATION_SET = "CreateConfigurationSet",
   CREATE_CONFIGURATION_SET_EVENT_DESTINATION = "CreateConfigurationSetEventDestination",
@@ -14475,7 +14475,7 @@ export enum SES {
   VERIFY_EMAIL_IDENTITY = "VerifyEmailIdentity",
 }
 
-export enum SNS {
+export enum Sns {
   ADD_PERMISSION = "AddPermission",
   CHECK_IF_PHONE_NUMBER_IS_OPTED_OUT = "CheckIfPhoneNumberIsOptedOut",
   CONFIRM_SUBSCRIPTION = "ConfirmSubscription",
@@ -14519,7 +14519,7 @@ export enum SNS {
   VERIFY_S_M_S_SANDBOX_PHONE_NUMBER = "VerifySMSSandboxPhoneNumber",
 }
 
-export enum SQS {
+export enum Sqs {
   ADD_PERMISSION = "AddPermission",
   CHANGE_MESSAGE_VISIBILITY = "ChangeMessageVisibility",
   CREATE_QUEUE = "CreateQueue",
@@ -14539,7 +14539,7 @@ export enum SQS {
   UNTAG_QUEUE = "UntagQueue",
 }
 
-export enum SageMaker {
+export enum Sagemaker {
   ADD_ASSOCIATION = "AddAssociation",
   ADD_TAGS = "AddTags",
   ASSOCIATE_TRIAL_COMPONENT = "AssociateTrialComponent",
@@ -14870,7 +14870,7 @@ export enum SageMaker {
   UPDATE_WORKTEAM = "UpdateWorkteam",
 }
 
-export enum SageMakerGroundTruthSynthetic {
+export enum SagemakerGroundTruthSynthetic {
   CREATE_PROJECT = "CreateProject",
   DELETE_PROJECT = "DeleteProject",
   GET_ACCOUNT_DETAILS = "GetAccountDetails",
@@ -14885,7 +14885,7 @@ export enum SageMakerGroundTruthSynthetic {
   UPDATE_BATCH = "UpdateBatch",
 }
 
-export enum SageMakergeospatialcapabilities {
+export enum SagemakerGeospatialCapabilities {
   DELETE_EARTH_OBSERVATION_JOB = "DeleteEarthObservationJob",
   DELETE_VECTOR_ENRICHMENT_JOB = "DeleteVectorEnrichmentJob",
   EXPORT_EARTH_OBSERVATION_JOB = "ExportEarthObservationJob",
@@ -14945,7 +14945,7 @@ export enum SessionManagerMessageGatewayService {
   OPEN_DATA_CHANNEL = "OpenDataChannel",
 }
 
-export enum SimpleEmailServicev2 {
+export enum SimpleEmailServiceV2 {
   BATCH_GET_METRIC_DATA = "BatchGetMetricData",
   CREATE_CONFIGURATION_SET = "CreateConfigurationSet",
   CREATE_CONFIGURATION_SET_EVENT_DESTINATION = "CreateConfigurationSetEventDestination",
@@ -15087,7 +15087,7 @@ export enum SimpleWorkflowService {
   UNTAG_RESOURCE = "UntagResource",
 }
 
-export enum SimpleDB {
+export enum Simpledb {
   BATCH_DELETE_ATTRIBUTES = "BatchDeleteAttributes",
   BATCH_PUT_ATTRIBUTES = "BatchPutAttributes",
   CREATE_DOMAIN = "CreateDomain",
@@ -15224,7 +15224,7 @@ export enum Translate {
   UPDATE_PARALLEL_DATA = "UpdateParallelData",
 }
 
-export enum VPCLattice {
+export enum VpcLattice {
   CREATE_ACCESS_LOG_SUBSCRIPTION = "CreateAccessLogSubscription",
   CREATE_LISTENER = "CreateListener",
   CREATE_RULE = "CreateRule",
@@ -15278,11 +15278,11 @@ export enum VPCLattice {
   UPDATE_TARGET_GROUP = "UpdateTargetGroup",
 }
 
-export enum VPCLatticeServices {
+export enum VpcLatticeServices {
   INVOKE = "Invoke",
 }
 
-export enum WorkDocs {
+export enum Workdocs {
   ABORT_DOCUMENT_VERSION_UPLOAD = "AbortDocumentVersionUpload",
   ACTIVATE_USER = "ActivateUser",
   ADD_NOTIFICATION_PERMISSIONS = "AddNotificationPermissions",
@@ -15343,7 +15343,7 @@ export enum WorkDocs {
   UPDATE_USER = "UpdateUser",
 }
 
-export enum WorkLink {
+export enum Worklink {
   ASSOCIATE_DOMAIN = "AssociateDomain",
   ASSOCIATE_WEBSITE_AUTHORIZATION_PROVIDER = "AssociateWebsiteAuthorizationProvider",
   ASSOCIATE_WEBSITE_CERTIFICATE_AUTHORITY = "AssociateWebsiteCertificateAuthority",
@@ -15380,7 +15380,7 @@ export enum WorkLink {
   UPDATE_IDENTITY_PROVIDER_CONFIGURATION = "UpdateIdentityProviderConfiguration",
 }
 
-export enum WorkMail {
+export enum Workmail {
   ADD_MEMBERS_TO_GROUP = "AddMembersToGroup",
   ASSOCIATE_DELEGATE_TO_RESOURCE = "AssociateDelegateToResource",
   ASSOCIATE_MEMBER_TO_GROUP = "AssociateMemberToGroup",
@@ -15514,12 +15514,12 @@ export enum WorkMail {
   WIPE_MOBILE_DEVICE = "WipeMobileDevice",
 }
 
-export enum WorkMailMessageFlow {
+export enum WorkmailMessageFlow {
   GET_RAW_MESSAGE_CONTENT = "GetRawMessageContent",
   PUT_RAW_MESSAGE_CONTENT = "PutRawMessageContent",
 }
 
-export enum WorkSpaces {
+export enum Workspaces {
   ASSOCIATE_CONNECTION_ALIAS = "AssociateConnectionAlias",
   ASSOCIATE_IP_GROUPS = "AssociateIpGroups",
   AUTHORIZE_IP_RULES = "AuthorizeIpRules",
@@ -15588,11 +15588,11 @@ export enum WorkSpaces {
   UPDATE_WORKSPACE_IMAGE_PERMISSION = "UpdateWorkspaceImagePermission",
 }
 
-export enum WorkSpacesApplicationManager {
+export enum WorkspacesApplicationManager {
   AUTHENTICATE_PACKAGER = "AuthenticatePackager",
 }
 
-export enum WorkSpacesWeb {
+export enum WorkspacesWeb {
   ASSOCIATE_BROWSER_SETTINGS = "AssociateBrowserSettings",
   ASSOCIATE_IP_ACCESS_SETTINGS = "AssociateIpAccessSettings",
   ASSOCIATE_NETWORK_SETTINGS = "AssociateNetworkSettings",
@@ -15653,11 +15653,11 @@ export enum WorkSpacesWeb {
   UPDATE_USER_SETTINGS = "UpdateUserSettings",
 }
 
-export enum MediaImport {
+export enum Mediaimport {
   CREATE_DATABASE_BINARY_SNAPSHOT = "CreateDatabaseBinarySnapshot",
 }
 
-export enum ApacheKafkaAPIsforMSKclusters {
+export enum ApacheKafkaApisForMskClusters {
   ALTER_CLUSTER = "AlterCluster",
   ALTER_CLUSTER_DYNAMIC_CONFIGURATION = "AlterClusterDynamicConfiguration",
   ALTER_GROUP = "AlterGroup",
@@ -15737,7 +15737,7 @@ export enum ElasticLoadBalancingV2 {
   SET_WEB_ACL = "SetWebAcl",
 }
 
-export enum Highvolumeoutboundcommunications {
+export enum HighvolumeOutboundCommunications {
   CREATE_CAMPAIGN = "CreateCampaign",
   DELETE_CAMPAIGN = "DeleteCampaign",
   DELETE_CONNECT_INSTANCE_CONFIG = "DeleteConnectInstanceConfig",

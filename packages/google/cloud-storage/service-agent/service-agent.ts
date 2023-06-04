@@ -1,7 +1,7 @@
 import { Construct } from "constructs";
 
 export interface ServiceAgentConfig {
-  projectNumber: string;
+  readonly projectNumber: string;
 }
 
 export class ServiceAgent extends Construct {

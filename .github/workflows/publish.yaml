@@ -4,16 +4,16 @@ on:
     branches:
       - main
     paths:
+      - "!**/*.md"
       - packages/**
-      - "!packages/.prettierrc"
       - .github/workflows/publish.yaml
   pull_request:
     branches:
       - main
     paths:
+      - "!**/*.md"
       - packages/**
       - "!.prettierrc"
-      - "!packages/.prettierrc"
       - .github/workflows/publish.yaml
 permissions:
   contents: write
@@ -40,7 +40,11 @@ jobs:
           npm run lerna:install
         working-directory: .
       - name: Build
-        run: npm run lerna:build
+        run: npm run lerna -- exec "npm run jsii:build"
+        working-directory: .
+      - name: Package
+        run: npm run lerna -- exec "npm run jsii:package"
+        working-directory: .
   bump-tag:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     needs:

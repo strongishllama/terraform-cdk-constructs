@@ -1,48 +1,49 @@
 import { Construct } from "constructs";
 import { DataGoogleProject } from "@cdktf/provider-google/lib/data-google-project";
 
-export interface ProjectConfig {}
+export interface ProjectConfig {
+  readonly id: string;
+  readonly number: string;
+}
 
 export class Project extends Construct implements IProject {
-  public static fromProjectAttributes(scope: Construct, id: string, _attributes?: ProjectAttributes): IProject {
+  public readonly id: string;
+  public readonly number: string;
+
+  public static fromProjectAttributes(scope: Construct, constructId: string, attributes?: ProjectAttributes): IProject {
     class Import implements IProject {
+      public readonly id: string;
+      public readonly number: string;
       private readonly data: DataGoogleProject;
 
       constructor() {
-        this.data = new DataGoogleProject(scope, id);
-      }
+        this.data = new DataGoogleProject(scope, constructId, {
+          id: attributes?.id,
+          projectId: attributes?.projectId,
+        });
 
-      public get id(): string {
-        return this.data.id;
-      }
-
-      public get number(): string {
-        return this.data.number;
+        this.id = this.data.id;
+        this.number = this.data.number;
       }
     }
 
     return new Import();
   }
 
-  // TODO: Implement
-  private constructor(scope: Construct, id: string, _config: ProjectConfig) {
+  private constructor(scope: Construct, id: string, config: ProjectConfig) {
     super(scope, id);
-  }
 
-  // TODO: Implement
-  public get id(): string {
-    return "";
-  }
-
-  // TODO: Implement
-  public get number(): string {
-    return "";
+    this.id = config.id;
+    this.number = config.number;
   }
 }
 
 export interface IProject {
-  id: string;
-  number: string;
+  readonly id: string;
+  readonly number: string;
 }
 
-export interface ProjectAttributes {}
+export interface ProjectAttributes {
+  readonly id: string;
+  readonly projectId: string;
+}

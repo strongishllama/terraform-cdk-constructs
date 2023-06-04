@@ -14,3 +14,8 @@ packages/**/*.js
 
 # Generated credentials from google-github-actions/auth.
 **/gha-creds-*.json
+
+# JSII files and directories.
+**/dist
+**/.jsii
+packages/**/tsconfig.json

@@ -25,15 +25,14 @@
     "node": ">=14.0"
   },
   "dependencies": {
-    "@terraform-cdk-constructs/google-iam": "0.0.0",
-    "cdktf": "^0.16.3",
-    "constructs": "^10.2.41"
+    "@terraform-cdk-constructs/google-iam": "0.0.0"
   },
   "devDependencies": {
     "@cdktf/provider-google": "7.0.9",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.15.0",
-    "constructs": "10.2.41",
+    "cdktf": "^0.16.3",
+    "constructs": "^10.2.41",
     "jest": "^29.5.0",
     "jsii": "^5.1.0",
     "jsii-pacmak": "^1.82.0",
@@ -45,6 +44,7 @@
   },
   "peerDependencies": {
     "@cdktf/provider-google": "^7.0.9",
+    "cdktf": "^0.16.3",
     "constructs": "^10.2.41"
   },
   "author": {

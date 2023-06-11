@@ -19,11 +19,13 @@ permissions:
   contents: write
 jobs:
   lint:
+    if: github.event_name == 'pull_request'
     name: Lint
     uses: strongishllama/github-actions/.github/workflows/npm-lint.yaml@main
     with:
       path: packages/
   test:
+    if: github.event_name == 'pull_request'
     name: Test
     runs-on: ubuntu-latest
     steps:

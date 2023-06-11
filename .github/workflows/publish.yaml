@@ -49,9 +49,6 @@ jobs:
         working-directory: .
   bump-tag:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    needs:
-      - lint
-      - test
     name: Bump Tag
     uses: strongishllama/github-actions/.github/workflows/bump-tag.yaml@main
   release:

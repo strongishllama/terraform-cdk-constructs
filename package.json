@@ -10,12 +10,15 @@
     "jsii:build": "npm run lerna -- exec 'npm run jsii:build'",
     "jsii:package": "npm run lerna -- exec 'npm run jsii:package'",
     "lerna:build": "lerna run build",
-    "lerna:clean": "npm run lerna -- exec 'trash node_modules package-lock.json; exit 0'",
-    "lerna:install": "lerna exec 'npm install'",
+    "lerna:clean": "trash node_modules package-lock.json && npm run lerna -- exec 'trash node_modules package-lock.json; exit 0'",
+    "lerna:install": "npm run lerna -- exec 'npm install'",
     "lerna": "lerna"
   },
   "engines": {
     "node": ">=14.0"
+  },
+  "bundledDependencies": {
+    "@cdktf/provider-google": "^7.0.9"
   },
   "devDependencies": {
     "@cdktf/provider-google": "^7.0.6",

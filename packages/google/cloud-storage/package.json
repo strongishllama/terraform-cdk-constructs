@@ -30,7 +30,7 @@
     "@terraform-cdk-constructs/google-cloud-kms": "0.0.0"
   },
   "devDependencies": {
-    "@cdktf/provider-google": "7.0.9",
+    "@cdktf/provider-google": "^7.0.9",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.15.0",
     "cdktf": "^0.16.3",

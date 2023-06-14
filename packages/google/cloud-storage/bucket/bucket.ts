@@ -1,75 +1,82 @@
 import { Construct } from "constructs";
-import { storageBucket, storageBucketIamMember } from "@cdktf/provider-google";
+import { kmsCryptoKeyIamMember, storageBucket, storageBucketIamMember } from "@cdktf/provider-google";
 import { Region } from "@terraform-cdk-constructs/google-compute-engine";
 import { GrantConfig, IGrantable, StorageRoles } from "@terraform-cdk-constructs/google-iam";
 import { CryptoKey } from "@terraform-cdk-constructs/google-cloud-kms";
+import { Project } from "@terraform-cdk-constructs/google-project";
 import { StorageBucketEncryption } from "@cdktf/provider-google/lib/storage-bucket";
-import { ITerraformDependable } from "cdktf/lib/terraform-dependable";
+import { ServiceAgent } from "../service-agent";
 
 export interface BucketConfig {
   readonly name: string;
   readonly location: Region;
   readonly cryptoKey?: CryptoKey;
-  readonly dependsOn?: ITerraformDependable[];
-  readonly labels?: {
-    [key: string]: string;
-  };
 }
 
 export class Bucket extends Construct {
-  private readonly cryptoKey?: CryptoKey;
+  public readonly name: string;
+
   private readonly resource: storageBucket.StorageBucket;
+  private readonly cryptoKey?: CryptoKey;
 
   constructor(scope: Construct, id: string, config: BucketConfig) {
     super(scope, id);
 
     let encryption: StorageBucketEncryption | undefined = undefined;
+    let grant: kmsCryptoKeyIamMember.KmsCryptoKeyIamMember | undefined = undefined;
+
     if (config.cryptoKey !== undefined) {
-      this.cryptoKey = this.cryptoKey;
+      this.cryptoKey = config.cryptoKey;
       encryption = {
-        defaultKmsKeyName: config.cryptoKey.id,
+        defaultKmsKeyName: this.cryptoKey.id,
       };
+
+      const storageServiceAgent = new ServiceAgent(this, "storage-service-agent", {
+        projectNumber: Project.fromProjectAttributes(this, "project").number,
+      });
+      grant = this.cryptoKey.grantEncrypterDecrypter(storageServiceAgent);
     }
 
     this.resource = new storageBucket.StorageBucket(this, "resource", {
       location: config.location,
       name: config.name,
       encryption: encryption,
-      dependsOn: config.dependsOn,
-      labels: config.labels,
+      dependsOn: grant !== undefined ? [grant] : undefined,
     });
+
+    this.name = this.resource.name;
   }
 
-  public grantAdmin(grantee: IGrantable): void {
+  public grantAdmin(grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
     return this.grant(grantee, {
       id: this.resource.name,
       role: StorageRoles.OBJECT_ADMIN,
     });
   }
 
-  public grantCreate(grantee: IGrantable): void {
+  public grantCreate(grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
     return this.grant(grantee, {
       id: this.resource.name,
       role: StorageRoles.OBJECT_CREATOR,
     });
   }
 
-  public grantView(grantee: IGrantable): void {
+  public grantView(grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
     return this.grant(grantee, {
       id: this.resource.name,
       role: StorageRoles.OBJECT_VIEWER,
     });
   }
 
-  private grant(grantee: IGrantable, config: GrantConfig): void {
-    new storageBucketIamMember.StorageBucketIamMember(this, "member", {
+  private grant(grantee: IGrantable, config: GrantConfig): storageBucketIamMember.StorageBucketIamMember {
+    if (this.cryptoKey !== undefined) {
+      this.cryptoKey.grantEncrypterDecrypter(grantee);
+    }
+
+    return new storageBucketIamMember.StorageBucketIamMember(this, "member", {
       bucket: config.id,
       member: grantee.grantMember,
       role: config.role,
     });
-
-    if (this.cryptoKey !== undefined) {
-      this.cryptoKey.grantEncrypterDecrypter(grantee);
-    }
   }
 }

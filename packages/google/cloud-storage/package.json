@@ -27,7 +27,8 @@
   "dependencies": {
     "@terraform-cdk-constructs/google-compute-engine": "0.0.0",
     "@terraform-cdk-constructs/google-iam": "0.0.0",
-    "@terraform-cdk-constructs/google-cloud-kms": "0.0.0"
+    "@terraform-cdk-constructs/google-cloud-kms": "0.0.0",
+    "@terraform-cdk-constructs/google-project": "0.0.0"
   },
   "devDependencies": {
     "@cdktf/provider-google": "^7.0.9",

@@ -17,9 +17,6 @@
   "engines": {
     "node": ">=14.0"
   },
-  "bundledDependencies": {
-    "@cdktf/provider-google": "^7.0.9"
-  },
   "devDependencies": {
     "@cdktf/provider-google": "^7.0.6",
     "@types/jest": "^29.5.1",

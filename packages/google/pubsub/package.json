@@ -1,0 +1,86 @@
+{
+  "name": "@terraform-cdk-constructs/google-pubsub",
+  "version": "0.0.0",
+  "description": "Terraform CDK Constructs for Google PubSub",
+  "main": "index.js",
+  "types": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "compile": "tsc --pretty",
+    "get": "cdktf get",
+    "format": "prettier --write '**/*.ts'",
+    "format-check": "prettier --check '**/*.ts'",
+    "jsii:build": "jsii",
+    "jsii:build:watch": "jsii --watch",
+    "jsii:package": "jsii-pacmak",
+    "synth": "cdktf synth",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "upgrade": "npm i cdktf@latest cdktf-cli@latest",
+    "upgrade:next": "npm i cdktf@next cdktf-cli@next",
+    "watch": "tsc -w"
+  },
+  "engines": {
+    "node": ">=14.0"
+  },
+  "dependencies": {
+    "@terraform-cdk-constructs/google-cloud-kms": "0.0.0",
+    "@terraform-cdk-constructs/google-iam": "0.0.0"
+  },
+  "devDependencies": {
+    "@cdktf/provider-google": "^7.0.9",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^18.15.0",
+    "cdktf": "^0.16.3",
+    "constructs": "^10.2.41",
+    "jest": "^29.5.0",
+    "jsii": "^5.1.0",
+    "jsii-pacmak": "^1.82.0",
+    "lerna": "^6.6.2",
+    "prettier": "^2.8.8",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "@cdktf/provider-google": "^7.0.9",
+    "cdktf": "^0.16.3",
+    "constructs": "^10.2.41"
+  },
+  "author": {
+    "name": "Taliesin Millhouse",
+    "url": "https://millhouse.dev"
+  },
+  "repository": {
+    "url": "https://github.com/strongishllama/terraform-cdk-constructs",
+    "type": "git"
+  },
+  "stability": "experimental",
+  "jsii": {
+    "outdir": "dist",
+    "versionFormat": "full",
+    "targets": {
+      "java": {
+        "package": "terraform.cdk.constructs.google.pub.sub",
+        "maven": {
+          "groupId": "terraform-cdk-constructs",
+          "artifactId": "google-pub-sub"
+        }
+      },
+      "python": {
+        "distName": "terraform-cdk-constructs.google-pub-sub",
+        "module": "terraform_cdk_constructs.google_pub_sub"
+      },
+      "dotnet": {
+        "namespace": "TerraformCdkConstructs",
+        "packageId": "GooglePubSub",
+        "iconUrl": "https://raw.githubusercontent.com/todo.png"
+      },
+      "go": {
+        "moduleName": "github.com/strongishllama/terraform-cdk-constructs/google-pub-sub",
+        "packageName": "google_pub_sub"
+      }
+    }
+  }
+}

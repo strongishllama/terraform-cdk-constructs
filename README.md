@@ -36,5 +36,6 @@ I haven't put a lot of thought into a contribution guide, so maybe if you're int
     - [google-compute-engine](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/compute-engine)
     - [google-iam](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/iam)
     - [google-cloud-project](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/project)
+    - [google-cloud-pubsub](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/pubsub)
 - [tools/](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/tools) - CLI tools
   - [cdktf-plus](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/tools/cdktf-plus) - A CLI tool to help fill some gaps missing in the cdktf CLI (currently just used to generate backends)

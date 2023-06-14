@@ -4,9 +4,6 @@ import { dnsManagedZone } from "@cdktf/provider-google";
 export interface ManagedZoneConfig {
   readonly dnsName: string;
   readonly name: string;
-  readonly labels?: {
-    [key: string]: string;
-  };
 }
 
 export class ManagedZone extends Construct implements IManagedZone {
@@ -19,7 +16,6 @@ export class ManagedZone extends Construct implements IManagedZone {
     this.resource = new dnsManagedZone.DnsManagedZone(this, "resource", {
       dnsName: config.dnsName,
       name: config.name,
-      labels: config.labels,
     });
 
     this.id = this.resource.id;

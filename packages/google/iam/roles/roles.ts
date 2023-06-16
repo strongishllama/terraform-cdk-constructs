@@ -1,3 +1,10 @@
+export enum ArtifactRegistryRoles {
+  ADMIN = "roles/artifactregistry.admin",
+  READER = "roles/artifactregistry.reader",
+  REPOSITORY_ADMIN = "roles/artifactregistry.repoAdmin",
+  WRITER = "roles/artifactregistry.writer",
+}
+
 export enum CloudKMSRoles {
   ADMIN = "roles/cloudkms.admin",
   ENCRYPTER = "roles/cloudkms.cryptoKeyEncrypter",

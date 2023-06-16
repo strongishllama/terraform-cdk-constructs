@@ -5,6 +5,5 @@
   "push": false,
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "verifyAccess": false,
-  "version": "0.0.0",
-  "useWorkspaces": true
+  "version": "0.0.0"
 }

@@ -25,8 +25,8 @@ export class Bucket extends Construct {
     let encryption: StorageBucketEncryption | undefined = undefined;
     let grant: kmsCryptoKeyIamMember.KmsCryptoKeyIamMember | undefined = undefined;
 
-    if (config.cryptoKey !== undefined) {
-      this.cryptoKey = config.cryptoKey;
+    this.cryptoKey = config.cryptoKey;
+    if (this.cryptoKey !== undefined) {
       encryption = {
         defaultKmsKeyName: this.cryptoKey.id,
       };

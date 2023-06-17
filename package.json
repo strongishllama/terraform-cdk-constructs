@@ -18,7 +18,7 @@
     "node": ">=14.0"
   },
   "devDependencies": {
-    "@cdktf/provider-google": "^7.0.6",
+    "@cdktf/provider-google": "^8.0.0",
     "@types/jest": "^29.5.1",
     "@types/node": "^18.15.0",
     "cdktf": "^0.17.0",
@@ -31,7 +31,7 @@
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "@cdktf/provider-google": "^7.0.6",
+    "@cdktf/provider-google": "^8.0.0",
     "cdktf": "^0.17.0",
     "constructs": "^10.2.41"
   },

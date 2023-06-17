@@ -25,37 +25,37 @@ export class CryptoKey extends Construct {
     });
   }
 
-  public get name(): string {
-    return this.resource.name;
-  }
-
   public get id(): string {
     return this.resource.id;
   }
 
-  public grantAdmin(grantee: IGrantable): kmsCryptoKeyIamMember.KmsCryptoKeyIamMember {
-    return this.grant(grantee, {
+  public get name(): string {
+    return this.resource.name;
+  }
+
+  public grantAdmin(id: string, grantee: IGrantable): kmsCryptoKeyIamMember.KmsCryptoKeyIamMember {
+    return this.grant(id, grantee, {
       id: this.resource.id,
       role: CloudKMSRoles.ADMIN,
     });
   }
 
-  public grantEncrypterDecrypter(grantee: IGrantable): kmsCryptoKeyIamMember.KmsCryptoKeyIamMember {
-    return this.grant(grantee, {
+  public grantEncrypterDecrypter(id: string, grantee: IGrantable): kmsCryptoKeyIamMember.KmsCryptoKeyIamMember {
+    return this.grant(id, grantee, {
       id: this.resource.id,
       role: CloudKMSRoles.ENCRYPTER_DECRYPTER,
     });
   }
 
-  public grantViewer(grantee: IGrantable): kmsCryptoKeyIamMember.KmsCryptoKeyIamMember {
-    return this.grant(grantee, {
+  public grantViewer(id: string, grantee: IGrantable): kmsCryptoKeyIamMember.KmsCryptoKeyIamMember {
+    return this.grant(id, grantee, {
       id: this.resource.id,
       role: CloudKMSRoles.VIEWER,
     });
   }
 
-  private grant(grantee: IGrantable, config: GrantConfig): kmsCryptoKeyIamMember.KmsCryptoKeyIamMember {
-    return new kmsCryptoKeyIamMember.KmsCryptoKeyIamMember(this, "member", {
+  private grant(id: string, grantee: IGrantable, config: GrantConfig): kmsCryptoKeyIamMember.KmsCryptoKeyIamMember {
+    return new kmsCryptoKeyIamMember.KmsCryptoKeyIamMember(this, id, {
       cryptoKeyId: config.id,
       member: grantee.grantMember,
       role: config.role,

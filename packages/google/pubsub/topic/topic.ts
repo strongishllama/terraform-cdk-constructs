@@ -25,16 +25,16 @@ export class Topic extends Construct {
     });
   }
 
-  public grantPublish(grantee: IGrantable): pubsubTopicIamMember.PubsubTopicIamMember {
-    return this.grant(grantee, {
+  public grantPublish(id: string, grantee: IGrantable): pubsubTopicIamMember.PubsubTopicIamMember {
+    return this.grant(id, grantee, {
       id: this.resource.name,
       role: PubSubRoles.PUBLISHER,
     });
   }
 
-  private grant(grantee: IGrantable, config: GrantConfig): pubsubTopicIamMember.PubsubTopicIamMember {
+  private grant(id: string, grantee: IGrantable, config: GrantConfig): pubsubTopicIamMember.PubsubTopicIamMember {
     if (this.cryptoKey !== undefined) {
-      this.cryptoKey.grantEncrypterDecrypter(grantee);
+      this.cryptoKey.grantEncrypterDecrypter(id, grantee);
     }
 
     return new pubsubTopicIamMember.PubsubTopicIamMember(this, "member", {

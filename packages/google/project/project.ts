@@ -7,13 +7,11 @@ export interface ProjectConfig {
 }
 
 export class Project extends Construct implements IProject {
-  public readonly id: string;
+  public readonly name: string;
   public readonly number: string;
 
   public static fromProjectAttributes(scope: Construct, constructId: string, attributes?: ProjectAttributes): IProject {
     class Import implements IProject {
-      public readonly id: string;
-      public readonly number: string;
       private readonly data: DataGoogleProject;
 
       constructor() {
@@ -21,25 +19,36 @@ export class Project extends Construct implements IProject {
           id: attributes?.id,
           projectId: attributes?.projectId,
         });
+      }
 
-        this.id = this.data.id;
-        this.number = this.data.number;
+      public get name(): string {
+        return this.data.name;
+      }
+
+      public get number(): string {
+        return this.data.number;
       }
     }
 
     return new Import();
   }
 
-  private constructor(scope: Construct, id: string, config: ProjectConfig) {
+  /**
+   * NOT IMPLEMENTED
+   * @param scope
+   * @param id
+   * @param _config
+   */
+  private constructor(scope: Construct, id: string, _config: ProjectConfig) {
     super(scope, id);
 
-    this.id = config.id;
-    this.number = config.number;
+    this.name = "";
+    this.number = "";
   }
 }
 
 export interface IProject {
-  readonly id: string;
+  readonly name: string;
   readonly number: string;
 }
 

@@ -14,8 +14,6 @@ export interface BucketConfig {
 }
 
 export class Bucket extends Construct {
-  public readonly name: string;
-
   private readonly resource: storageBucket.StorageBucket;
   private readonly cryptoKey?: CryptoKey;
 
@@ -26,52 +24,56 @@ export class Bucket extends Construct {
     let grant: kmsCryptoKeyIamMember.KmsCryptoKeyIamMember | undefined = undefined;
 
     this.cryptoKey = config.cryptoKey;
-    if (this.cryptoKey !== undefined) {
+    if (this.cryptoKey) {
       encryption = {
         defaultKmsKeyName: this.cryptoKey.id,
       };
 
-      const storageServiceAgent = new ServiceAgent(this, "storage-service-agent", {
+      const serviceAgent = new ServiceAgent(this, "service-agent", {
         projectNumber: Project.fromProjectAttributes(this, "project").number,
       });
-      grant = this.cryptoKey.grantEncrypterDecrypter(storageServiceAgent);
+      grant = this.cryptoKey.grantEncrypterDecrypter(`${id}-service-agent`, serviceAgent);
     }
 
     this.resource = new storageBucket.StorageBucket(this, "resource", {
       location: config.location,
       name: config.name,
       encryption: encryption,
-      dependsOn: grant !== undefined ? [grant] : undefined,
+      dependsOn: grant ? [grant] : undefined,
     });
-
-    this.name = this.resource.name;
   }
 
-  public grantAdmin(grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
-    return this.grant(grantee, {
+  public get id(): string {
+    return this.resource.id;
+  }
+
+  public get name(): string {
+    return this.resource.name;
+  }
+
+  public grantAdmin(id: string, grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
+    return this.grant(id, grantee, {
       id: this.resource.name,
       role: StorageRoles.OBJECT_ADMIN,
     });
   }
 
-  public grantCreate(grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
-    return this.grant(grantee, {
+  public grantCreate(id: string, grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
+    return this.grant(id, grantee, {
       id: this.resource.name,
       role: StorageRoles.OBJECT_CREATOR,
     });
   }
 
-  public grantView(grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
-    return this.grant(grantee, {
+  public grantView(id: string, grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
+    return this.grant(id, grantee, {
       id: this.resource.name,
       role: StorageRoles.OBJECT_VIEWER,
     });
   }
 
-  private grant(grantee: IGrantable, config: GrantConfig): storageBucketIamMember.StorageBucketIamMember {
-    if (this.cryptoKey !== undefined) {
-      this.cryptoKey.grantEncrypterDecrypter(grantee);
-    }
+  private grant(id: string, grantee: IGrantable, config: GrantConfig): storageBucketIamMember.StorageBucketIamMember {
+    this.cryptoKey?.grantEncrypterDecrypter(id, grantee);
 
     return new storageBucketIamMember.StorageBucketIamMember(this, "member", {
       bucket: config.id,

@@ -5,7 +5,6 @@ import { CryptoKey } from "@terraform-cdk-constructs/google-cloud-kms";
 import { ArtifactRegistryRoles, GrantConfig, IGrantable } from "@terraform-cdk-constructs/google-iam";
 import { ServiceAgent } from "../service-agent";
 import { IProject, Project } from "@terraform-cdk-constructs/google-project";
-import { DockerImage } from "@terraform-cdk-constructs/assets";
 
 export interface RepositoryConfig {
   readonly format: RepositoryFormat;
@@ -13,9 +12,9 @@ export interface RepositoryConfig {
   readonly cryptoKey?: CryptoKey;
 }
 
-export class Repository extends Construct {
-  private readonly resource: artifactRegistryRepository.ArtifactRegistryRepository;
-  private readonly project: IProject;
+export abstract class Repository extends Construct {
+  protected readonly resource: artifactRegistryRepository.ArtifactRegistryRepository;
+  protected readonly project: IProject;
   private readonly format: RepositoryFormat;
   private readonly cryptoKey?: CryptoKey;
 
@@ -49,19 +48,6 @@ export class Repository extends Construct {
 
   public get name(): string {
     return this.resource.name;
-  }
-
-  public addAsset(id: string, config: AssetConfig): void {
-    switch (this.format) {
-      case RepositoryFormat.DOCKER:
-        new DockerImage(this, id, {
-          path: config.path,
-          name: `${this.resource.location}-docker.pkg.dev/${this.project.name}/${this.resource.name}/${config.name}`,
-        });
-        break;
-      default:
-        throw new Error(`google-artifact-registry.Repository construct does not yet support the adding of ${this.resource.format} format yet.`);
-    }
   }
 
   public grantAdmin(id: string, grantee: IGrantable): artifactRegistryRepositoryIamMember.ArtifactRegistryRepositoryIamMember {

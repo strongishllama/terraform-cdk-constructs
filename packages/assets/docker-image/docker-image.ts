@@ -1,13 +1,18 @@
 import { TerraformAsset } from "cdktf";
 import { Construct } from "constructs";
 import { resource } from "@cdktf/provider-null";
+import { IAsset } from "../asset";
 
 export interface DockerImageConfig {
   readonly path: string;
   readonly name: string;
 }
 
-export class DockerImage extends Construct {
+export class DockerImage extends Construct implements IAsset {
+  public readonly id: string;
+  public readonly uri: string;
+  public readonly resource: resource.Resource;
+
   constructor(scope: Construct, id: string, config: DockerImageConfig) {
     super(scope, id);
 
@@ -21,7 +26,7 @@ export class DockerImage extends Construct {
       `docker push ${config.name}`,
     ];
 
-    new resource.Resource(this, "resource", {
+    this.resource = new resource.Resource(this, "resource", {
       triggers: {
         hash: asset.assetHash,
       },
@@ -32,5 +37,8 @@ export class DockerImage extends Construct {
         },
       ],
     });
+
+    this.id = this.resource.id;
+    this.uri = config.name;
   }
 }

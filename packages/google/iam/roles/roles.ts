@@ -5,6 +5,13 @@ export enum ArtifactRegistryRoles {
   WRITER = "roles/artifactregistry.writer",
 }
 
+export enum CloudRunRoles {
+  ADMIN = "roles/run.admin",
+  DEVELOPER = "roles/run.developer",
+  INVOKER = "roles/run.invoker",
+  VIEWER = "roles/run.viewer",
+}
+
 export enum CloudKMSRoles {
   ADMIN = "roles/cloudkms.admin",
   ENCRYPTER = "roles/cloudkms.cryptoKeyEncrypter",

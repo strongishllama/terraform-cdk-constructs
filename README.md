@@ -30,8 +30,11 @@ I haven't put a lot of thought into a contribution guide, so maybe if you're int
   - [aws](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/aws) - AWS construct packages
     - [aws-iam](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/aws/iam)
   - [google](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google) - Google construct packages
+    - [google-artifact-registry](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/artifact-registry)
+    - [google-artifact-registry-assets](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/artifact-registry-assets)
     - [google-cloud-dns](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/cloud-dns)
     - [google-cloud-kms](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/cloud-kms)
+    - [google-cloud-run](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/cloud-run)
     - [google-cloud-storage](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/cloud-storage)
     - [google-compute-engine](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/compute-engine)
     - [google-iam](https://github.com/strongishllama/terraform-cdk-constructs/tree/main/packages/google/iam)

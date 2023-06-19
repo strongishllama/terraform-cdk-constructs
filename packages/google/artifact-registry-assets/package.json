@@ -67,7 +67,7 @@
       },
       "python": {
         "distName": "terraform-cdk-constructs.google-artifact-registry-assets",
-        "module": "terraform_cdk_constructs.google_artifact_registry-assets"
+        "module": "terraform_cdk_constructs.google_artifact_registry_assets"
       },
       "dotnet": {
         "namespace": "TerraformCdkConstructs",
@@ -76,7 +76,7 @@
       },
       "go": {
         "moduleName": "github.com/strongishllama/terraform-cdk-constructs/google-artifact-registry-assets",
-        "packageName": "google_artifact_registry-assets"
+        "packageName": "google_artifact_registry_assets"
       }
     }
   }

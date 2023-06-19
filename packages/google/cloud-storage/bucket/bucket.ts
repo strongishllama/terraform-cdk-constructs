@@ -75,7 +75,7 @@ export class Bucket extends Construct {
   private grant(id: string, grantee: IGrantable, config: GrantConfig): storageBucketIamMember.StorageBucketIamMember {
     this.cryptoKey?.grantEncrypterDecrypter(id, grantee);
 
-    return new storageBucketIamMember.StorageBucketIamMember(this, "member", {
+    return new storageBucketIamMember.StorageBucketIamMember(this, id, {
       bucket: config.id,
       member: grantee.grantMember,
       role: config.role,

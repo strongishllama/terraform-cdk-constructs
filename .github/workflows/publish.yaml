@@ -86,7 +86,10 @@ jobs:
           npm run lerna:install
         working-directory: .
       - name: Build
-        run: npm run lerna:build
+        run: npm run lerna -- exec "npm run jsii:build"
+        working-directory: .
+      - name: Package
+        run: npm run lerna -- exec "npm run jsii:package"
         working-directory: .
       - name: Publish
         run: |

@@ -16,7 +16,6 @@ export class Project extends Construct implements IProject {
 
       constructor() {
         this.data = new DataGoogleProject(scope, constructId, {
-          id: attributes?.id,
           projectId: attributes?.projectId,
         });
       }
@@ -53,6 +52,5 @@ export interface IProject {
 }
 
 export interface ProjectAttributes {
-  readonly id: string;
   readonly projectId: string;
 }

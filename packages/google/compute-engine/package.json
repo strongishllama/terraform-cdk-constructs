@@ -48,6 +48,9 @@
     "name": "Taliesin Millhouse",
     "url": "https://millhouse.dev"
   },
+  "keywords": [
+    "cdktf"
+  ],
   "repository": {
     "url": "https://github.com/strongishllama/terraform-cdk-constructs",
     "type": "git"

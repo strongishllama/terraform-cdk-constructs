@@ -25,7 +25,7 @@ export class Topic extends Construct {
     });
   }
 
-  public grantPublish(id: string, grantee: IGrantable): pubsubTopicIamMember.PubsubTopicIamMember {
+  public grantPublisher(id: string, grantee: IGrantable): pubsubTopicIamMember.PubsubTopicIamMember {
     return this.grant(id, grantee, {
       id: this.resource.name,
       role: PubSubRoles.PUBLISHER,

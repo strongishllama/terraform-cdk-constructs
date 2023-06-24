@@ -58,14 +58,14 @@ export class Bucket extends Construct {
     });
   }
 
-  public grantCreate(id: string, grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
+  public grantCreator(id: string, grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
     return this.grant(id, grantee, {
       id: this.resource.name,
       role: StorageRoles.OBJECT_CREATOR,
     });
   }
 
-  public grantView(id: string, grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
+  public grantViewer(id: string, grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
     return this.grant(id, grantee, {
       id: this.resource.name,
       role: StorageRoles.OBJECT_VIEWER,

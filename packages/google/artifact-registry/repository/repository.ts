@@ -52,22 +52,22 @@ export abstract class Repository extends Construct {
 
   public grantAdmin(id: string, grantee: IGrantable): artifactRegistryRepositoryIamMember.ArtifactRegistryRepositoryIamMember {
     return this.grant(id, grantee, {
-      id: this.resource.name,
+      id: this.resource.id,
       role: ArtifactRegistryRoles.REPOSITORY_ADMIN,
     });
   }
 
   public grantReader(id: string, grantee: IGrantable): artifactRegistryRepositoryIamMember.ArtifactRegistryRepositoryIamMember {
     return this.grant(id, grantee, {
-      id: this.resource.name,
-      role: ArtifactRegistryRoles.REPOSITORY_ADMIN,
+      id: this.resource.id,
+      role: ArtifactRegistryRoles.READER,
     });
   }
 
   public grantWriter(id: string, grantee: IGrantable): artifactRegistryRepositoryIamMember.ArtifactRegistryRepositoryIamMember {
     return this.grant(id, grantee, {
-      id: this.resource.name,
-      role: ArtifactRegistryRoles.REPOSITORY_ADMIN,
+      id: this.resource.id,
+      role: ArtifactRegistryRoles.WRITER,
     });
   }
 
@@ -80,9 +80,4 @@ export abstract class Repository extends Construct {
       role: config.role,
     });
   }
-}
-
-export interface AssetConfig {
-  readonly path: string;
-  readonly name: string;
 }

@@ -29,9 +29,11 @@ export interface ServiceConfig {
   readonly allowUnauthenticatedInvocations?: boolean;
 }
 
-export class Service extends Construct {
-  public readonly resource: cloudRunV2Service.CloudRunV2Service;
-  private readonly location: Region;
+export class Service extends Construct implements IService {
+  public readonly id: string;
+  public readonly location: Region;
+
+  private readonly resource: cloudRunV2Service.CloudRunV2Service;
 
   constructor(scope: Construct, id: string, config: ServiceConfig) {
     super(scope, id);
@@ -84,6 +86,8 @@ export class Service extends Construct {
       dependsOn: dependsOn,
     });
 
+    this.id = this.resource.id;
+
     if (allowUnauthenticatedInvocations) {
       this.grantInvoker("all-users", {
         grantMember: "allUsers",
@@ -121,4 +125,9 @@ export interface ContainerConfig {
    * If provided, 'imageUri', must be 'undefined'.
    */
   readonly imageAsset?: DockerImage;
+}
+
+export interface IService {
+  readonly id: string;
+  readonly location: Region;
 }

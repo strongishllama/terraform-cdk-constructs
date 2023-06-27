@@ -1,26 +1,31 @@
 import { Construct } from "constructs";
 import { kmsCryptoKeyIamMember, storageBucket, storageBucketIamMember } from "@cdktf/provider-google";
+import { id as random } from "@cdktf/provider-random";
+import * as kms from "@terraform-cdk-constructs/google-cloud-kms";
 import { Region } from "@terraform-cdk-constructs/google-compute-engine";
-import { GrantConfig, IGrantable, StorageRoles } from "@terraform-cdk-constructs/google-iam";
-import { CryptoKey } from "@terraform-cdk-constructs/google-cloud-kms";
+import * as eventarc from "@terraform-cdk-constructs/google-eventarc";
+import * as destinations from "@terraform-cdk-constructs/google-eventarc-destinations";
+import * as iam from "@terraform-cdk-constructs/google-iam";
 import { Project } from "@terraform-cdk-constructs/google-project";
-import { StorageBucketEncryption } from "@cdktf/provider-google/lib/storage-bucket";
 import { ServiceAgent } from "../service-agent";
 
 export interface BucketConfig {
   readonly name: string;
   readonly location: Region;
-  readonly cryptoKey?: CryptoKey;
+  readonly cryptoKey?: kms.CryptoKey;
 }
 
 export class Bucket extends Construct {
   private readonly resource: storageBucket.StorageBucket;
-  private readonly cryptoKey?: CryptoKey;
+  private readonly cryptoKey?: kms.CryptoKey;
+  private readonly location: Region;
 
   constructor(scope: Construct, id: string, config: BucketConfig) {
     super(scope, id);
 
-    let encryption: StorageBucketEncryption | undefined = undefined;
+    this.location = config.location;
+
+    let encryption: storageBucket.StorageBucketEncryption | undefined = undefined;
     let grant: kmsCryptoKeyIamMember.KmsCryptoKeyIamMember | undefined = undefined;
 
     this.cryptoKey = config.cryptoKey;
@@ -36,10 +41,43 @@ export class Bucket extends Construct {
     }
 
     this.resource = new storageBucket.StorageBucket(this, "resource", {
-      location: config.location,
+      location: this.location,
       name: config.name,
       encryption: encryption,
       dependsOn: grant ? [grant] : undefined,
+    });
+  }
+
+  public onObjectFinalized(id: string, destination: destinations.ITriggerDestination): eventarc.Trigger {
+    return this.onEvent(id, {
+      triggerType: eventarc.TriggerType.CLOUD_STORAGE_OBJECT_V1_FINALIZED,
+      destination: destination,
+    });
+  }
+
+  public onEvent(id: string, config: OnEventConfig): eventarc.Trigger {
+    let name = config.name;
+    if (!name) {
+      const suffix = new random.Id(this, `${id}-suffix`, {
+        byteLength: 6,
+      });
+      name = `${id}-${suffix.id}`;
+    }
+
+    return new eventarc.Trigger(this, id, {
+      location: config.location ?? this.location,
+      name: name,
+      destination: config.destination,
+      matchingCriteria: [
+        {
+          attribute: "bucket",
+          value: this.resource.name,
+        },
+        {
+          attribute: "type",
+          value: config.triggerType,
+        },
+      ],
     });
   }
 
@@ -51,28 +89,28 @@ export class Bucket extends Construct {
     return this.resource.name;
   }
 
-  public grantAdmin(id: string, grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
+  public grantAdmin(id: string, grantee: iam.IGrantable): storageBucketIamMember.StorageBucketIamMember {
     return this.grant(id, grantee, {
       id: this.resource.name,
-      role: StorageRoles.OBJECT_ADMIN,
+      role: iam.StorageRoles.OBJECT_ADMIN,
     });
   }
 
-  public grantCreator(id: string, grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
+  public grantCreator(id: string, grantee: iam.IGrantable): storageBucketIamMember.StorageBucketIamMember {
     return this.grant(id, grantee, {
       id: this.resource.name,
-      role: StorageRoles.OBJECT_CREATOR,
+      role: iam.StorageRoles.OBJECT_CREATOR,
     });
   }
 
-  public grantViewer(id: string, grantee: IGrantable): storageBucketIamMember.StorageBucketIamMember {
+  public grantViewer(id: string, grantee: iam.IGrantable): storageBucketIamMember.StorageBucketIamMember {
     return this.grant(id, grantee, {
       id: this.resource.name,
-      role: StorageRoles.OBJECT_VIEWER,
+      role: iam.StorageRoles.OBJECT_VIEWER,
     });
   }
 
-  private grant(id: string, grantee: IGrantable, config: GrantConfig): storageBucketIamMember.StorageBucketIamMember {
+  private grant(id: string, grantee: iam.IGrantable, config: iam.GrantConfig): storageBucketIamMember.StorageBucketIamMember {
     this.cryptoKey?.grantEncrypterDecrypter(id, grantee);
 
     return new storageBucketIamMember.StorageBucketIamMember(this, id, {
@@ -81,4 +119,27 @@ export class Bucket extends Construct {
       role: config.role,
     });
   }
+}
+
+export interface OnEventConfig {
+  /**
+   * The type of trigger that will invoke the Eventarc trigger.
+   */
+  readonly triggerType: eventarc.TriggerType;
+  /**
+   * The destination that the Eventarc trigger will route the event to.
+   */
+  readonly destination: destinations.ITriggerDestination;
+  /**
+   * The name of the Eventarc trigger that will be created. This name must be unique within the location.
+   *
+   * @default If left 'undefined', a random name will be generated.
+   */
+  readonly name?: string;
+  /**
+   * The region the Eventarc trigger will be created in.
+   *
+   * @default If left 'undefined', the region of the Cloud Storage bucket will be used.
+   */
+  readonly location?: Region;
 }

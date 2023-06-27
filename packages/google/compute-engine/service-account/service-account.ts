@@ -4,7 +4,7 @@ export interface ServiceAccountConfig {
   readonly projectNumber: string;
 }
 
-export class ServiceAccount extends Construct {
+export class IamServiceAccount extends Construct {
   public readonly grantMember: string;
 
   constructor(scope: Construct, id: string, config: ServiceAccountConfig) {

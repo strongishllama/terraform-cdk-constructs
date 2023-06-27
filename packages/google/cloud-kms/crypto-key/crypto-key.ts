@@ -1,6 +1,6 @@
 import { Construct } from "constructs";
 import { kmsCryptoKey, kmsCryptoKeyIamMember } from "@cdktf/provider-google";
-import { id as _id } from "@cdktf/provider-random";
+import { id as random } from "@cdktf/provider-random";
 import { IKeyRing } from "../key-ring/key-ring";
 import { GrantConfig, IGrantable } from "@terraform-cdk-constructs/google-iam";
 import { CloudKMSRoles } from "@terraform-cdk-constructs/google-iam";
@@ -16,7 +16,7 @@ export class CryptoKey extends Construct {
   constructor(scope: Construct, id: string, config: CryptoKeyConfig) {
     super(scope, id);
 
-    const suffix = new _id.Id(this, "suffix", {
+    const suffix = new random.Id(this, "suffix", {
       byteLength: 6,
     });
     this.resource = new kmsCryptoKey.KmsCryptoKey(this, "resource", {

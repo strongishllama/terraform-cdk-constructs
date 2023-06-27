@@ -10,6 +10,7 @@ export interface ServiceAccountConfig {
 //       This is not a problem with other L1 resources because they're prefix with their service name, i.e 'storageBucket'.
 export class IamServiceAccount extends Construct {
   public readonly grantMember: string;
+
   private readonly resource: serviceAccount.ServiceAccount;
 
   constructor(scope: Construct, id: string, config: ServiceAccountConfig) {

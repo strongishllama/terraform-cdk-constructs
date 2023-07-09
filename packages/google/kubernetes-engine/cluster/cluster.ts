@@ -1,6 +1,6 @@
 import { Construct } from "constructs";
 import { containerCluster, containerNodePool } from "@cdktf/provider-google";
-import { ISubnet, IVpc, Region, ServiceAccount } from "@terraform-cdk-constructs/google-compute-engine";
+import { ISubnet, IVpc, Region, IamServiceAccount } from "@terraform-cdk-constructs/google-compute-engine";
 import { IProject, Project } from "@terraform-cdk-constructs/google-project";
 import { ClusterMode } from "../cluster-mode";
 import { ClusterAccess } from "../cluster-access";
@@ -26,7 +26,7 @@ export class Cluster extends Construct {
     super(scope, id);
 
     this.project = Project.fromProjectAttributes(this, "project");
-    this.grantMember = new ServiceAccount(this, "compute-engine-service-account", {
+    this.grantMember = new IamServiceAccount(this, "compute-engine-service-account", {
       projectNumber: this.project.number,
     }).grantMember;
 

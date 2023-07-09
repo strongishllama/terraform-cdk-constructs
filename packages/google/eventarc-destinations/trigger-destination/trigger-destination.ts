@@ -10,7 +10,7 @@ export interface TriggerDestinationConfig {
 }
 
 export interface WorkflowConfig {
-  id: string;
+  readonly id: string;
 }
 
 export interface CloudRunServiceConfig {

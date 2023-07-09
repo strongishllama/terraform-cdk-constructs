@@ -25,8 +25,7 @@
     "node": ">=14.0"
   },
   "dependencies": {
-    "@terraform-cdk-constructs/google-cloud-run": "0.0.0",
-    "@terraform-cdk-constructs/google-eventarc": "0.0.0"
+    "@terraform-cdk-constructs/google-cloud-run": "0.0.0"
   },
   "devDependencies": {
     "@cdktf/provider-google": "^8.0.0",
